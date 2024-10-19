@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WordSearch</title>
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+    <style>
+        html {
+            font-size: 15px;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("../wordsearch/2.jfif");
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .b {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mysearchtask"></div>
+
+    <script src="https://cdn.jsdelivr.net/gh/QuentinAndre/WordSearchJS/lib/wordsearch.min.js"></script>
+    <script>
+        var countrygrid = [
+            ['P', 'I', 'V', 'T', 'A', 'R', 'I', 'G', 'H', 'T', 'S', 'N', 'E', 'T', 'H', 'C', 'E', 'I', 'A'],
+            ['R', 'I', 'N', 'F', 'R', 'I', 'N', 'G', 'E', 'M', 'E', 'N', 'T', 'R', 'I', 'G', 'H', 'T', 'U'],
+            ['O', 'O', 'M', 'A', 'N', 'I', 'A', 'T', 'V', 'I', 'S', 'R', 'O', 'I', 'I', 'I', 'O', 'C', 'T'],
+            ['T', 'T', 'E', 'J', 'V', 'I', 'E', 'T', 'Y', 'C', 'N', 'L', 'E', 'R', 'A', 'R', 'I', 'D', 'H'],
+            ['E', 'V', 'P', 'M', 'J', 'J', 'S', 'C', 'O', 'P', 'Y', 'R', 'I', 'G', 'H', 'T', 'N', 'E', 'O'],
+            ['C', 'E', 'C', 'L', 'V', 'E', 'S', 'T', 'N', 'N', 'T', 'S', 'U', 'U', 'E', 'A', 'S', 'V', 'R'],
+            ['T', 'A', 'E', 'I', 'I', 'A', 'L', 'L', 'D', 'A', 'U', 'W', 'G', 'H', 'L', 'E', 'X', 'C', 'S'],
+            ['I', 'G', 'J', 'N', 'L', 'C', 'T', 'V', 'O', 'A', 'R', 'A', 'B', 'R', 'T', 'B', 'R', 'Z', 'H'],
+            ['O', 'E', 'J', 'W', 'N', 'B', 'E', 'L', 'T', 'R', 'A', 'D', 'E', 'M', 'A', 'R', 'K', 'G', 'I'],
+            ['N', 'Y', 'P', 'D', 'I', 'V', 'U', 'N', 'A', 'E', 'P', 'Z', 'L', 'L', 'R', 'L', 'L', 'S', 'P'],
+            ['L', 'R', 'R', 'M', 'A', 'C', 'T', 'P', 'S', 'M', 'R', 'K', 'G', 'T', 'N', 'V', 'P', 'N', 'N'],
+            ['R', 'O', 'Y', 'A', 'L', 'T', 'I', 'E', 'S', 'E', 'O', 'A', 'I', 'J', 'N', 'S', 'K', 'D', 'J'],
+            ['L', 'G', 'N', 'I', 'N', 'C', 'A', 'L', 'W', 'R', 'P', 'H', 'U', 'A', 'E', 'D', 'R', 'N', 'D'],
+            ['A', 'T', 'T', 'R', 'I', 'B', 'U', 'T', 'E', 'S', 'E', 'V', 'M', 'L', 'J', 'N', 'A', 'A', 'J'],
+            ['N', 'U', 'A', 'V', 'K', 'A', 'A', 'D', 'A', 'N', 'R', 'C', 'A', 'O', 'V', 'A', 'M', 'L', 'Y'],
+            ['U', 'H', 'Z', 'U', 'V', 'J', 'O', 'G', 'O', 'R', 'T', 'W', 'E', 'V', 'J', 'L', 'N', 'G', 'L'],
+            ['N', 'E', 'D', 'E', 'W', 'S', 'B', 'R', 'N', 'N', 'Y', 'V', 'J', 'Z', 'T', 'E', 'E', 'N', 'A'],
+            ['D', 'S', 'U', 'R', 'A', 'L', 'E', 'B', 'C', 'T', 'I', 'I', 'G', 'I', 'C', 'R', 'D', 'E', 'T'],
+            ['D', 'N', 'A', 'L', 'N', 'I', 'F', 'G', 'F', 'R', 'A', 'M', 'E', 'W', 'O', 'R', 'K', 'E', 'I']
+        ];
+
+        var countrynames = ['COPYRIGHT', 'PROPERTY', 'LICENSE', 'RIGHTS', 'ATTRIBUTES', 'PROTECTION', 'FRAMEWORK', 'AUTHORSHIP', 'ROYALTIES', 'INFRINGEMENT'];
+
+        function getRandom(arr, n) {
+            var result = new Array(n),
+                len = arr.length,
+                taken = new Array(len);
+            if (n > len) throw new RangeError("getRandom: more elements taken than available");
+            while (n--) {
+                var x = Math.floor(Math.random() * len);
+                result[n] = arr[x in taken ? taken[x] : x];
+                taken[x] = --len in taken ? taken[len] : len;
+            }
+            return result;
+        }
+
+        var wordnames = getRandom(countrynames, 10);
+
+        ws = new WordSearch({
+            "grid": countrygrid,
+            "words": wordnames,
+            "parentId": "mysearchtask",
+            "onFindWord": function () {
+                console.log(this.getScore());
+                console.log(this.getTiming());
+            }
+        });
+    </script>
+
+    <div id="game">
+        <a href="/copyright.html">
+            <button class="b"><h1>Finish</h1></button>
+        </a>
+    </div>
+</body>
+</html>
