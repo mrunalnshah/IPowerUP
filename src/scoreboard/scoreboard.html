@@ -13,17 +13,35 @@
 
 <body>
     <div class="navbar">
-        <nav>
-            <a href="../homepage/homepage.html" style="text-decoration: none">
+        <header>
+            <nav class="navbar">
                 <h2><span>IPowerUp</span></h2>
-            </a>
-            <ul>
-                <li><a href="../homepage/homepage.html">HOME</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Categories</a></li>
-            </ul>
-            <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
-        </nav>
+                <div class="dropdown">
+                    <a href="../homepage/homepage.html" class="home">Home</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Categories</button>
+                    <div class="dropdown-content">
+                        <a href="../patent/patent.html">Patent</a>
+                        <a href="../copyright/copyright.html">Copyright</a>
+                        <a href="../trademark/trademark.html">Trademarks</a>
+                        <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Games</button>
+                    <div class="dropdown-content">
+                        <a href="../games/quiz_trademark/tradesecret-quiz.html">Trademark Quiz</a>
+                        <a href="../games/quiz/tradesecret-quiz.html">Tradesecret Quiz</a>
+                        <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+                        <a href="../games/crossword/patent-crossword.html">Crossword</a>
+                        <a href="../games/wordsearch/Copyright-wordsearch.html">Wordsearch</a>
+                    </div>
+                </div>
+                <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+                <a class="btn" href="../../index.html">Sign Out</a>
+            </nav>
+        </header>
     </div>
 
 
@@ -40,7 +58,6 @@
                 </thead>
                 <tbody id="quiz-trademark"></tbody>
             </table>
-            <button class="share-btn">Share</button>
         </div>
 
         <div class="leaderboard-box" id="quiz-board">
@@ -55,7 +72,6 @@
                 </thead>
                 <tbody id="quiz-tradesecret"></tbody>
             </table>
-            <button class="share-btn">Share</button>
         </div>
 
         <div class="leaderboard-box" id="quiz-board">
@@ -70,7 +86,6 @@
                 </thead>
                 <tbody id="logo-trademark"></tbody>
             </table>
-            <button class="share-btn">Share</button>
         </div>
 
         <div class="leaderboard-box" id="wordsearch-board">
@@ -85,7 +100,6 @@
                 </thead>
                 <tbody id="wordsearch"></tbody>
             </table>
-            <button class="share-btn">Share</button>
         </div>
 
         <div class="leaderboard-box" id="crossroad-board">
@@ -100,7 +114,6 @@
                 </thead>
                 <tbody id="crossword"></tbody>
             </table>
-            <button class="share-btn">Share</button>
         </div>
     </div>
 

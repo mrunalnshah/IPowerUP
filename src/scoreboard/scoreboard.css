@@ -1,13 +1,16 @@
-/* Basic reset and font */
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transition: .2s linear;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f4f7fc;
+  background-image: url(../../images/homepage_newBg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,63 +18,183 @@ body {
   padding: 2rem;
 }
 
-/* Navbar styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow: visible;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.logo {
+  width: 70px;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.menu-icon {
+  width: 30px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+/* Navbar Styles */
 .navbar {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
+  background-color: rgb(38, 70, 158);
+  /* Set initial transparency */
+  border-bottom: 2px solid rgb(38, 70, 158);
+  padding: 0px 20px;
+  z-index: 10;
+  transition: background-color 0.4s, box-shadow 0.4s;
+  /* Smooth transition */
 }
 
-nav {
-  box-sizing: border-box;
-  border: 2px solid rgb(38, 70, 158);
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 1);
+  /* Fully opaque on scroll */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Add shadow for depth */
 }
 
-nav h2 {
-  margin-left: 11px;
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background: none;
+  margin-right: 20px;
+}
+
+.dropbtn {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-right: 20px;
+  /* Add space between buttons */
+}
+
+
+/* Dropdown button on hover & focus */
+.dropdown:hover .dropdown-content {
+  display: block;
+  /* Show the dropdown content on hover */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+
+.navbar h2 {
+  padding: 10px;
+  padding-right: 20px;
   cursor: pointer;
   color: #000;
 }
 
-nav h2 span {
+.navbar h2 span {
   font-style: italic;
-  color: rgb(38, 70, 158);
+  font-size: 6dvh;
+  color: rgb(246, 246, 246);
 }
 
-nav ul {
-  flex: 1;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-nav ul li a {
-  padding: 15px;
+.navbar .home {
+  font-size: 1.5rem;
+  padding: 0 3.5rem;
+  margin-left: 180px;
+  color: #fff;
+  font-weight: bold;
+  align-items: center;
   text-decoration: none;
-  color: #000;
-  transition: 0.3s;
 }
 
-nav ul li a:hover {
-  box-shadow: 0 5px 20px rgb(38, 70, 158) inset;
-}
-
-nav .btn {
-  color: #000;
+.navbar a {
+  font-size: 1.2rem;
+  color: #080808;
+  font-weight: bold;
+  align-items: center;
   text-decoration: none;
-  margin-right: 25px;
-  padding: 10px 12px;
+}
+
+.navbar a:hover {
+
+  color: rgb(171, 171, 240);
+}
+
+.navbar .btn1 {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgb(98, 122, 189);
+  margin-left: 200px;
+}
+
+.navbar .btn:hover {
+  background: rgb(172, 172, 239);
+}
+
+.navbar .btn1:hover {
+  background: rgb(172, 172, 239);
+}
+
+.navbar .btn {
+  color: white;
+  text-decoration: none;
+  margin-right: 50px;
+  padding: 10px;
+  box-sizing: border-box;
   border-radius: 20px;
   background-color: rgb(98, 122, 189);
+
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  height: 88%;
+}
+
+.col {
+  flex-basis: 50%;
 }
 
 /* Main container styling */
@@ -81,7 +204,8 @@ nav .btn {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
-  margin-top: 80px; /* Adjust margin for fixed navbar */
+  margin-top: 80px;
+  /* Adjust margin for fixed navbar */
 }
 
 .leaderboard-box {
@@ -108,7 +232,7 @@ nav .btn {
   left: -80px;
   width: 160px;
   height: 160px;
-  background-color: rgba(92, 91, 229, 0.2);
+  background-color: white;
   border-radius: 50%;
 }
 
@@ -119,7 +243,7 @@ nav .btn {
   right: -80px;
   width: 160px;
   height: 160px;
-  background-color: rgba(92, 91, 229, 0.1);
+  background-color: white;
   border-radius: 50%;
 }
 
@@ -146,9 +270,9 @@ nav .btn {
 }
 
 .leaderboard-box th {
-  background-color: #f0f1ff;
-  color: #5c5be5;
-  font-weight: bold;
+  background-color: rgb(38, 70, 158);
+  color: white;
+  font-weight: bolder;
 }
 
 .leaderboard-box tr:nth-child(even) {
@@ -161,7 +285,8 @@ nav .btn {
 
 .leaderboard-box tr:first-child td {
   font-weight: bold;
-  color: #d4af37; /* Gold for the first rank */
+  color: #d4af37;
+  /* Gold for the first rank */
 }
 
 .share-btn {

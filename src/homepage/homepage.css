@@ -6,13 +6,13 @@
   scroll-behavior: smooth;
 }
 
-html{
+html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   overflow: visible;
 }
 
-section{
+section {
   padding: 2rem 9%;
 }
 
@@ -40,6 +40,7 @@ section{
   cursor: pointer;
   margin-left: 40px;
 }
+
 /* Navbar Styles */
 .navbar {
   display: flex;
@@ -49,16 +50,20 @@ section{
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(38, 70, 158); /* Set initial transparency */
+  background-color: rgb(38, 70, 158);
+  /* Set initial transparency */
   border-bottom: 2px solid rgb(38, 70, 158);
-  padding:0px 20px;
+  padding: 0px 20px;
   z-index: 10;
-  transition: background-color 0.4s, box-shadow 0.4s; /* Smooth transition */
+  transition: background-color 0.4s, box-shadow 0.4s;
+  /* Smooth transition */
 }
 
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 1); /* Fully opaque on scroll */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  background-color: rgba(255, 255, 255, 1);
+  /* Fully opaque on scroll */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Add shadow for depth */
 }
 
 
@@ -67,28 +72,36 @@ section{
   position: relative;
   display: inline-block;
   background: none;
+  margin-right: 20px;
 }
+
 .dropbtn {
-  background:none;
+  background: none;
   color: white;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
+  margin-right: 20px;
+  /* Add space between buttons */
 }
 
+
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
- color: #2980B9;
+.dropdown:hover .dropdown-content {
+  display: block;
+  /* Show the dropdown content on hover */
 }
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgb(38, 70, 158);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: white;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
 
 /* Links inside the dropdown */
 .dropdown-content a {
@@ -99,10 +112,14 @@ section{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display: block;
+}
 
 
 .navbar h2 {
@@ -117,6 +134,7 @@ section{
   font-size: 6dvh;
   color: rgb(246, 246, 246);
 }
+
 .navbar .home {
   font-size: 1.5rem;
   padding: 0 3.5rem;
@@ -127,10 +145,9 @@ section{
   text-decoration: none;
 }
 
-.navbar a{
-  font-size: 1.5rem;
-  padding: 0 3.5rem;
-  color: #fff;
+.navbar a {
+  font-size: 1.2rem;
+  color: rgb(38, 70, 158);
   font-weight: bold;
   align-items: center;
   text-decoration: none;
@@ -142,7 +159,7 @@ section{
 }
 
 .navbar .btn1 {
-  color: #000;
+  color: white;
   text-decoration: none;
   margin-right: 15px;
   box-sizing: border-box;
@@ -151,14 +168,17 @@ section{
   background-color: rgb(98, 122, 189);
   margin-left: 200px;
 }
-.navbar .btn:hover{
-  background: rgb(172, 172, 239) ;
+
+.navbar .btn:hover {
+  background: rgb(172, 172, 239);
 }
-.navbar .btn1:hover{
-  background: rgb(172, 172, 239)  ;
+
+.navbar .btn1:hover {
+  background: rgb(172, 172, 239);
 }
+
 .navbar .btn {
-  color: #000;
+  color: white;
   text-decoration: none;
   margin-right: 50px;
   padding: 10px;
@@ -338,5 +358,5 @@ h5 {
   position: absolute;
   right: 45%;
   left: 3%;
-  text-align: justify;
+  text-align: justify;
 }
