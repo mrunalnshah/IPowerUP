@@ -19,7 +19,7 @@
                     <div class="form sign-up">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" placeholder="Username">
+                            <input type="text" placeholder="Username" required>
                         </div>
                         <div class="input-group">
                             <i class='bx bx-mail-send'></i>
@@ -36,6 +36,7 @@
                         <button>
                             Sign up
                         </button>
+                        <label id="message_up"></label>
                         <p>
                             <span>
                                 Already have an account?
@@ -55,7 +56,7 @@
                     <div class="form sign-in">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="email" placeholder="Email">
+                            <input type="email" placeholder="Email" required>
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
@@ -66,7 +67,7 @@
                         </button>
                         <label id="message_in"></label>
                         <p>
-                            <b>
+                            <b class="pointer">
                                 Forgot password?
                             </b>
                         </p>
@@ -77,7 +78,6 @@
                             <b onclick="toggle()" class="pointer">
                                 Sign up here
                             </b>
-                            <label id="message_up"></label>
                         </p>
                     </div>
                 </div>
@@ -119,8 +119,8 @@
         </div>
         <!-- END CONTENT SECTION -->
     </div>
-    <script src="authDesign.js"></script>
     <script type="module" src="auth.js"></script>
+    <script src="authDesign.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("2.jpg");
+    background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 35rem;
+    box-shadow: 0px 0px 5px #4b6584;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.col {
+    text-align: center;
+    padding: 15px;
+}
+
+.question {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+
+#submit {
+    width: 100%;
+    background-color: black;
+    transition: 0.5s;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: rgb(34, 6, 53);
+}
+
+.b {
+    position: absolute;
+    width: 10%;
+    height: 5%;
+    bottom: 10%;
+    right: 45%;
+}

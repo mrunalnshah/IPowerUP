@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC2fy_gS6IXKMfUeEf_4nydw_UAckDfnMA",
@@ -28,6 +28,14 @@ document.querySelector('.form.sign-up button').addEventListener('click', (event)
     const email = document.querySelector('.form.sign-up input[type="email"]').value;
     const password = document.querySelector('.form.sign-up input[type="password"]').value;
 
+    if (email === '' || password === '') {
+        const errorMessage = "Email and Password cannot be empty";
+        document.getElementById('message_up').textContent = errorMessage;
+        document.getElementById('message_up').style.color = 'red';
+        return;
+    }
+
+
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -46,6 +54,15 @@ document.querySelector('.form.sign-in button').addEventListener('click', (event)
     const email = document.querySelector('.form.sign-in input[type="email"]').value;
     const password = document.querySelector('.form.sign-in input[type="password"]').value;
 
+
+    if (email === '' || password === '') {
+        const errorMessage = "Email and Password cannot be empty";
+        document.getElementById('message_up').textContent = errorMessage;
+        document.getElementById('message_up').style.color = 'red';
+        return;
+    }
+
+
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -57,3 +74,29 @@ document.querySelector('.form.sign-in button').addEventListener('click', (event)
             document.getElementById('message_in').style.color = 'red';
         });
 });
+
+// Forgot Password
+document.querySelector('.form.sign-in p b').addEventListener('click', (event) => {
+    event.preventDefault();
+    const email = document.querySelector('.form.sign-in input[type="email"]').value;
+
+    if (email === '') {
+        const errorMessage = "Please enter your email address.";
+        document.getElementById('message_in').textContent = errorMessage;
+        document.getElementById('message_in').style.color = 'red';
+        return;
+    }
+
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            const successMessage = "Password reset email sent if email is valid! kindly Check your inbox.";
+            document.getElementById('message_in').textContent = successMessage;
+            document.getElementById('message_in').style.color = 'green';
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            document.getElementById('message_in').textContent = errorMessage;
+            document.getElementById('message_in').style.color = 'red';
+        });
+});
+
