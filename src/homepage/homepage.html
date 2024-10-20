@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="homepage.css" rel="stylesheet" />
-    <title>Homepage</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="navbar">
-        <!-- <img src="images/logo.png" class="logo" /> -->
-        <!-- <nav>
-          <ul>
-            <button><a href="Homepage.html">Home</a></button>
-            <button><a href="Categories.html">Contact</a></button>
-            <button><a href="About.html">About</a></button>
-          </ul>
-        </nav> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="homepage.css" rel="stylesheet">
+  <title>Homepage</title>
+</head>
 
-        <!--NEED TO INTEGRAGE INSTEAD OF ABOVE-->
-        <nav>
-          <a href="homepage.html" style="text-decoration: none">
-            <h2><span>IPowerUp</span></h2>
-          </a>
-          <ul>
-            <li><a href="homepage.html">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
+<body>
 
-            <li><a href="#">Categories</a></li>
-          </ul>
-          <a class="btn" href="../scoreboard/scoreboard.html" style="color: aliceblue">Leaderboard</a>
-          <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
+  <div class="container">
+    <div class="navbar">
+      <header>
+        <nav class="navbar">
+          <h2><span>IPowerUp</span></h2>
+          <div class="dropdown">
+            <a href="homepage.html" class="home">Home</a>
+
+
+            <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Categories</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="../patent/patent.html">Patent</a>
+                <a href="../copyright/copyright.html">Copyright</a>
+                <a href="../trademark/trademark.html">Trademarks</a>
+                <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+              </div>
+            </div>
+            <a href="#">Games</a>
+            <a class="btn1" href="../scoreboard/scoreboard.html"
+              style="color: aliceblue; font-size:20px ;">Leaderboard</a>
+            <a class="btn" href="../../index.html" style="color: aliceblue;  font-size:20px ;">Sign Out</a>
         </nav>
+      </header>
+    </div>
 
-        <!-- <img src="images/menu.png" class="menu-icon" /> -->
+    <div class="row">
+      <div class="col col1">
+        <h1 class="ip-title"><span>Intellectual property</span></h1>
+
+        <p class="ip-desc">
+          Intellectual property is a category of property that includes
+          intangible creations of the human intellect. There are many types of
+          intellectual property, and some countries recognize more than
+          others. The best-known types are patents, copyrights, trademarks,
+          and trade secrets.
+        </p>
+        <!-- <button type="button">Explore</button> -->
       </div>
-
-      <div class="row">
-        <div class="col col1">
-          <h1 class="ip-title"><span>Intellectual property</span></h1>
-
-          <p class="ip-desc">
-            Intellectual property is a category of property that includes
-            intangible creations of the human intellect. There are many types of
-            intellectual property, and some countries recognize more than
-            others. The best-known types are patents, copyrights, trademarks,
-            and trade secrets.
-          </p>
-          <!-- <button type="button">Explore</button> -->
-        </div>
-        <div class="col">
-          <a href="../trademark/trademark.html">
-            <div class="card1">
-              <!-- <h5>
+      <div class="col">
+        <a href="../trademark/trademark.html">
+          <div class="card1">
+            <!-- <h5>
               <a href="trademark.html">
                 <img src="images/homepage_TRADE MARK.jpg" />
               </a>
             </h5> -->
-            </div>
-          </a>
-          <a href="../patent/patent.html">
-            <div class="card2">
-              <h5></h5>
-            </div>
-          </a>
-          <a href="../copyright/copyright.html">
-            <div class="card3">
-              <h5></h5>
-            </div>
-          </a>
-          <a href="../tradesecret/tradesecret.html">
-            <div class="card4">
-              <h5></h5>
-            </div>
-          </a>
-        </div>
+          </div>
+        </a>
+        <a href="../patent/patent.html">
+          <div class="card2">
+            <h5></h5>
+          </div>
+        </a>
+        <a href="../copyright/copyright.html">
+          <div class="card3">
+            <h5></h5>
+          </div>
+        </a>
+        <a href="../tradesecret/tradesecret.html">
+          <div class="card4">
+            <h5></h5>
+          </div>
+        </a>
       </div>
     </div>
+  </div>
+  <script type="module" src="homepage.js"> </script>
+</body>
 
-    <script src="homepage.js"></script>
-  </body>
 </html>
