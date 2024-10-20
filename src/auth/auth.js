@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC2fy_gS6IXKMfUeEf_4nydw_UAckDfnMA",
@@ -15,6 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 
 function clearMessages() {
@@ -27,26 +29,49 @@ document.querySelector('.form.sign-up button').addEventListener('click', (event)
     event.preventDefault();
     const email = document.querySelector('.form.sign-up input[type="email"]').value;
     const password = document.querySelector('.form.sign-up input[type="password"]').value;
+    const username = document.querySelector('.form.sign-up input[type="text"]').value;
 
-    if (email === '' || password === '') {
-        const errorMessage = "Email and Password cannot be empty";
+    if (email === '' || password === '' || username === '') {
+        const errorMessage = "Kindly fill up all the fields...";
         document.getElementById('message_up').textContent = errorMessage;
         document.getElementById('message_up').style.color = 'red';
         return;
     }
 
-
     createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            window.location.href = '../homepage/homepage.html'
+    .then((userCredential) => {
+        const user = userCredential.user;
+
+        const usersCollection = collection(db, 'users');
+        addDoc(usersCollection, {
+            userId: user.uid,
+            username: username,
+            email: email,
+            crossword: 0,
+            logoquiz: 0,
+            quiz_tradesecret: 0,
+            quiz_trademark: 0,
+            wordsearch: 0,
+        })
+        .then(() => {
+            console.log("User data added to Firestore");
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            window.location.href = '../homepage/homepage.html';
         })
         .catch((error) => {
-            const errorMessage = error.message;
-            document.getElementById('message_up').textContent = errorMessage;
+            console.error("Error adding user data: ", error);
+            document.getElementById('message_up').textContent = error.message;
             document.getElementById('message_up').style.color = 'red';
         });
+    })
+    .catch((error) => {
+        const errorMessage = error.message;
+        document.getElementById('message_up').textContent = errorMessage;
+        document.getElementById('message_up').style.color = 'red';
+    });
 });
+
 
 // Login function
 document.querySelector('.form.sign-in button').addEventListener('click', (event) => {
@@ -66,6 +91,8 @@ document.querySelector('.form.sign-in button').addEventListener('click', (event)
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            localStorage.setItem("username", user.username);
+            localStorage.setItem("email", user.email);
             window.location.href = '../homepage/homepage.html'
         })
         .catch((error) => {

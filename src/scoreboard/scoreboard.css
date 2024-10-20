@@ -1,0 +1,181 @@
+/* Basic reset and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-color: #f4f7fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav {
+  box-sizing: border-box;
+  border: 2px solid rgb(38, 70, 158);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav h2 {
+  margin-left: 11px;
+  cursor: pointer;
+  color: #000;
+}
+
+nav h2 span {
+  font-style: italic;
+  color: rgb(38, 70, 158);
+}
+
+nav ul {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  padding: 15px;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 5px 20px rgb(38, 70, 158) inset;
+}
+
+nav .btn {
+  color: #000;
+  text-decoration: none;
+  margin-right: 25px;
+  padding: 10px 12px;
+  border-radius: 20px;
+  background-color: rgb(98, 122, 189);
+}
+
+/* Main container styling */
+.leaderboard-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-top: 80px; /* Adjust margin for fixed navbar */
+}
+
+.leaderboard-box {
+  width: 850px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboard-box:hover {
+  transform: translateY(-10px);
+}
+
+/* Box decoration */
+.leaderboard-box::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  background-color: rgba(92, 91, 229, 0.2);
+  border-radius: 50%;
+}
+
+.leaderboard-box::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 160px;
+  height: 160px;
+  background-color: rgba(92, 91, 229, 0.1);
+  border-radius: 50%;
+}
+
+/* Title styling */
+.leaderboard-box h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Table styling for each leaderboard */
+.leaderboard-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.leaderboard-box td,
+.leaderboard-box th {
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+.leaderboard-box th {
+  background-color: #f0f1ff;
+  color: #5c5be5;
+  font-weight: bold;
+}
+
+.leaderboard-box tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.leaderboard-box tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.leaderboard-box tr:first-child td {
+  font-weight: bold;
+  color: #d4af37; /* Gold for the first rank */
+}
+
+.share-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #5c5be5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.share-btn:hover {
+  background-color: #4a49d0;
+}
