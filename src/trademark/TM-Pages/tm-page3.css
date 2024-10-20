@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: rgba(0, 0, 0, 0.3) url("/images/2.ji"); */
+  background-image: url("2.jfif");
+  background-blend-mode: darken;
+  background-size: cover;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Satisfy";
+}
+
+.main {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.container {
+  width: 35rem;
+  box-shadow: 0px 0px 5px #4b6584;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 40px 50px;
+}
+
+.col {
+  text-align: justify;
+  padding: 15px;
+  width: 95%;
+}
+
+#submit {
+  width: 100%;
+  background-color: black;
+  transition: 0.5s;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 25px;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: rgb(34, 6, 53);
+}
+
+.box {
+  box-shadow: 0px -1px 1px grey;
+  width: 100%;
+}
+
+.b {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  bottom: 10%;
+  right: 45%;
+}
+
+.next-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    /* margin-top: 100px;
+    margin-right: 40%; */
+    font-size: 16px;
+    border-radius: 5px;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    bottom: 10%;
+    right: 44%;
+}
+
+.next-button:hover {
+    background-color: #45a049;
+}
+.prev-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    /* margin-top: 100px;
+    margin-left: 45%;
+    margin-right: 1%; */
+    font-size: 16px;
+    border-radius: 5px;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    bottom: 10%;
+    left: 44%;
+}
+
+.prev-button:hover {
+    background-color: #45a049;
+}

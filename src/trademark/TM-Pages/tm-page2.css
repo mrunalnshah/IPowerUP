@@ -1,0 +1,109 @@
+col {
+    flex-basis: 50%;
+    bottom: 5%;
+}
+
+.card {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    border-radius: 20px;
+    /* margin: 100px; */
+    /* margin-right: 200px; */
+    margin-top: 150px;
+    /* box-sizing: border-box; */
+    cursor: default;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    box-sizing: border-box;
+    border: 2px solid rgb(38, 70, 158);
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+}
+
+nav h2 {
+    margin-left: 11px;
+    cursor: pointer;
+    color: #000;
+}
+
+nav h2 span {
+    font-style: italic;
+    color: rgb(38, 70, 158);
+}
+
+nav ul {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 4px;
+}
+
+nav ul li a {
+    padding: 15px;
+    text-decoration: none;
+    color: #000;
+    transition: 2s;
+}
+
+nav ul li a:hover {
+    box-shadow: 0 5px 20px rgb(38, 70, 158) inset,
+        0 5px 20px rgb(38, 70, 158) inset, 0 5px 20px rgb(38, 70, 158) inset,
+        0 5px 20px rgb(38, 70, 158) inset;
+}
+
+nav .btn {
+    color: #000;
+    text-decoration: none;
+    margin-right: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 12px;
+    background-color: rgb(98, 122, 189);
+}
+
+.next-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 100px;
+    margin-right: 40%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.next-button:hover {
+    background-color: #45a049;
+}
+.prev-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 100px;
+    margin-left: 45%;
+    margin-right: 1%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.prev-button:hover {
+    background-color: #45a049;
+}
