@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1c1c1c;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282828;
+}
+
+.logo {
+    color: #ffcc00;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links a, .profile-actions a {
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.profile-actions a {
+    padding: 5px 10px;
+    background-color: #5468ff;
+    border-radius: 5px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.avatar img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.user-info {
+    margin-left: 20px;
+}
+
+h1, h2, h3 {
+    color: #ffcc00;
+}
+
+.progress-bar {
+    background-color: #333;
+    border-radius: 5px;
+    width: 200px;
+    height: 20px;
+    margin: 10px 0;
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.about, .progress-section, .achievements {
+    background-color: #2d2d2d;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.progress-item {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.achievement-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.achievement-card {
+    background-color: #3a3a3a;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background-color: #ffcc00;
+    color: #1c1c1c;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffaa00;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
