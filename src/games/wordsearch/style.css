@@ -1,0 +1,176 @@
+/*
+Created by Catherine Rodriquez
+*/
+
+/* makes all screens the same font */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Itim", cursive;
+  }
+  
+  /* hide background class used to alternate between different game screens */
+  .hide-background {
+    display: none;
+  }
+  
+  /* background welcome screen */
+  .Welcome-Background {
+    background-color: rgb(199, 221, 242);
+    height: 100vh;
+    padding-top: 1px;
+  }
+  
+  /* background word search */
+  .background-wordSearch {
+    background-color: rgba(128, 128, 128, 0.671);
+    height: 100vh;
+    padding-top: 1px;
+  }
+  
+  /* welcome screen title */
+  .title-start {
+    color: darkgrey;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 2%;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  
+  /* creator title */
+  .title-creator {
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 2%;
+  }
+  
+  /* creator image */
+  .image {
+    margin-left: 3em;
+    width: 475px;
+    height: 600px;
+  }
+  
+  /* creator -> date located under creator image */
+  .createdDate {
+    margin-left: 3em;
+  }
+  
+  /* creator bio */
+  .aboutMe {
+    margin-left: 7em;
+    margin-top: 3%;
+    margin-right: 3em;
+    font-size: 22px;
+  }
+  
+  /* main screen game selection location and size */
+  .game-selection {
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  /* layout for tic-tac-toe button on start screen */
+  #tic-tac-toe-play,
+  #wordSearch-play {
+    width: 300px;
+    height: 150px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* layout for tic-tac-toe button on start screen */
+  #tic-tac-toe-play {
+    background-image: url("assets/TicTacToe_Game.png");
+    background-size: cover;
+  }
+  
+  /* layout for wordSearch button on start screen */
+  #wordSearch-play {
+    background-image: url("assets/WordSearch_Game.png");
+    background-size: cover;
+    margin-right: 1.25em;
+  }
+  
+  /* Centers Main Screen Game Buttons */
+  .play {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5em;
+  }
+  
+  /* pseudo-element for blur effect */
+  #tic-tac-toe-play::before,
+  #wordSearch-play::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit background image */
+    filter: blur(3px);
+    z-index: 1; /* Behind the title */
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Hidden initially */
+  }
+  
+  /* Show blur effect on hover */
+  #tic-tac-toe-play:hover::before,
+  #wordSearch-play:hover::before {
+    opacity: 1; /* Show the blur effect */
+  }
+  
+  /* styling for the title that appears on hover */
+  #tic-tac-toe-play .title,
+  #wordSearch-play .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 25px;
+    opacity: 0; /* Initially hides the title */
+    transition: opacity 0.3s ease;
+    z-index: 2; /* Above the blur effect */
+  }
+  
+  /* fades in the title on hover */
+  #tic-tac-toe-play:hover .title,
+  #wordSearch-play:hover .title {
+    opacity: 1; /* Makes the title visible */
+  }
+  
+  /* enlarges the button when hovering over it */
+  #tic-tac-toe-play:hover,
+  #wordSearch-play:hover {
+    transform: scale(1.1);
+  }
+  
+  /* grey buttons */
+  #creator-menu,
+  #creator-to-start {
+    background-color: grey;
+    color: black;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    margin-left: 1em;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .start-TTT,
+  .creator-info {
+    display: flex;
+    justify-content: space-between;
+  }

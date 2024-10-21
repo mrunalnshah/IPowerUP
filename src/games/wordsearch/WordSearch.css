@@ -1,0 +1,282 @@
+/*
+Created by Catherine Rodriquez
+*/
+
+
+/* makes all screens the same font */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Itim", cursive;
+}
+
+/* display for exit button */
+#return {
+    padding: 5px;
+    text-align: left;
+    background-color: lightgrey;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+h1,
+h3,
+h2,
+#wordTheme,
+#solveButton,
+#newGameButton,
+.listWord,
+#challenge {
+
+    padding: 5px;
+    text-align: center;
+
+}
+
+/* used to display in the center the New Game button and Race the Clock button*/
+#gameOptions,
+#solve {
+    display: flex;
+    justify-content: center;
+}
+
+
+h1,
+h2,
+#wordTheme,
+#solveButton,
+#newGameButton,
+#challenge {
+
+    border: 2px black solid;
+    border-radius: 8px;
+
+}
+
+h1,
+h2,
+.cell,
+#wordTheme,
+#wordlist {
+
+    background-color: white;
+
+}
+
+h2 {
+    margin: 10px auto 10px auto;
+    display: table
+}
+
+
+h1 {
+    font-size: 40px;
+    margin: 10px auto 10px auto;
+    margin-top: -0.5em;
+    display: table;
+
+}
+
+/* allows the hover effect on the buttons*/
+#newGameButton:hover,
+#solveButton:hover,
+#return:hover,
+#challenge:hover {
+    transform: scale(1.1);
+}
+
+/* background color of the page*/
+body {
+
+    background-color: #EAF7FB;
+
+}
+
+/* border around word search theme box*/
+#wordTheme {
+
+    border-radius: 8px;
+
+}
+
+/* border around game info box*/
+#gameInfo {
+    border-radius: 10px
+}
+
+/* display location of word search table*/
+#wordboard {
+
+    margin: 20px auto 0 auto;
+    border: 2px black solid;
+    display: table;
+    min-width: 600px;
+
+}
+
+.boardRow {
+
+    display: table-row;
+
+}
+
+/* info on how the table is displayed on screen for word search*/
+.cell {
+
+    margin: 0 auto;
+    border: none;
+    display: table-cell;
+    height: 30px;
+    width: 30px;
+    font-size: 17px;
+    padding: 0;
+    outline: 0;
+
+    /*ensures text can't be accidentally selected*/
+    cursor: default;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+
+}
+
+/* mouse color on table*/
+.cell:hover {
+
+    background-color: rgb(143, 143, 143);
+
+}
+
+/* mouse color on table to show directions that can be taken for word search*/
+.cell.selectable {
+
+    background-color: rgb(211, 211, 211);
+
+}
+
+/* mouse color on table to show the letters user is selecting for word search*/
+.cell.selected {
+
+    background-color: grey;
+
+}
+
+/* change in display of found words on board*/
+.cell.found {
+
+    background-color: rgb(206, 206, 234);
+    border: 1px black solid;
+    font-weight: bold;
+
+}
+
+/* change in display of words given through word search answer reveal*/
+.lost {
+    background-color: rgb(162, 209, 244);
+    border: 1px black solid;
+    font-weight: bold;
+
+}
+
+/* display of AI found words on word board*/
+.AI {
+    background-color: rgba(244, 202, 209, 0.982);
+    border: 1px black solid;
+    font-weight: bold;
+
+}
+
+
+/* word list box display info*/
+#wordlist {
+
+    margin: 40px auto 0 auto;
+    border: 2px black solid;
+    display: table;
+    min-width: 600px;
+    font-size: 17px;
+    text-align: center;
+
+}
+
+.listRow {
+
+    display: table-row;
+
+}
+
+.listWord {
+
+    display: table-cell;
+
+}
+
+/* crosses off words as they are found*/
+.listWord.found {
+
+    color: rgb(162, 209, 244);
+    text-decoration: line-through;
+
+}
+
+/* crosses off words as they are found*/
+.listWord.User {
+
+    color: rgb(206, 206, 234);
+    text-decoration: line-through;
+
+}
+
+/* crosses off words as they are found*/
+.listWord.crossAI {
+
+    color: pink;
+    text-decoration: line-through;
+
+}
+
+/* used to space the exit button and timer*/
+#topScreen {
+    display: inline-block;
+    justify-content: space-between;
+    display: flex;
+}
+
+/* timer info for display*/
+#Timer {
+    border: 2px black solid;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 1em;
+    margin-top: 1em;
+    padding: 5px;
+    text-align: center;
+}
+
+/* New Game, Race the Clock, and Reveal Answers button info*/
+#solveButton,
+#newGameButton,
+#challenge {
+
+    background-color: lightgrey;
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    outline: 0;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* used to hide displays -> keep at bottom*/
+.hide {
+    display: none;
+}

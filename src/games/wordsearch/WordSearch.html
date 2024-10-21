@@ -1,0 +1,53 @@
+<!-- Created By Catherine Rodriquez -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="wordSearch.css">
+    <link rel="preconnect" href="https://font.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
+    <title>AI-rcade</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="WSlogic.js"></script>
+    <script src="WSpath.js"></script>
+    <script src="WScontroller.js"></script>
+    <script src="WSview.js"></script>
+    <script src="WordSearchAlLogic.js"></script>
+    <script type="module" src="firebase.js"></script>
+
+</head>
+
+<body>
+    <section id="topScreen">
+        <button id="return" onclick="returnToMain()">Exit</button>
+        <div id="Timer" class="hide">Time Left: 40s</div>
+        <script>
+            function returnToMain() {
+                window.location.href = "../../homepage/homepage.html"
+            }
+        </script>
+    </section>
+    <h1>Word Search</h1>
+    <h2 id="gameInfo">Click-and-Drag to select words! Or press Race the Clock for a Challenge!</h2>
+    <h3 id="themeIntro">The theme is: <span id="wordTheme"></span></h3>
+    <section id="gameOptions">
+        <button id="newGameButton" type="button">New Game</button>
+        <button id="challenge" type="button">Race The Clock</button>
+    </section>
+    <div id="wordboard"></div>
+    <div id="wordlist"></div>
+    <section id="solve">
+        <button id="solveButton" type="button">Release the sacred answers!</button>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            new WordSearchController("#wordboard", "#wordlist", "#solveButton", "#newGameButton",
+                "#wordTheme", "#challenge", "#Timer");
+        })
+    </script>
+
+</body>
