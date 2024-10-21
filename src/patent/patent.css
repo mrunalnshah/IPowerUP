@@ -104,15 +104,19 @@ p {
 }
 
 .ip-title {
-  padding-bottom: 30px;
+  padding-top: 2%;
+  padding-bottom: 30%;
   position: absolute;
   top: -5%;
 }
 
 .ip-desc {
-  font-size: medium;
+  font-size: x-large;
   /* position:absolute; */
   top: 30%;
+  line-height: 100%;
+  text-align: justify;
+  
 }
 
 .card {

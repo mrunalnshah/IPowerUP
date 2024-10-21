@@ -110,8 +110,9 @@ p {
 }
 
 .ip-desc {
-  font-size: medium;
+  font-size: 23px;
   /* position:absolute; */
+  line-height: 100%;
   top: 30%;
 }
 

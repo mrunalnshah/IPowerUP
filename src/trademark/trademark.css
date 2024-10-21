@@ -104,15 +104,19 @@ p {
 }
 
 .ip-title {
-  padding-bottom: 30px;
+  padding-top: 2%;
+  padding-bottom: 30%;
   position: absolute;
   top: -5%;
 }
 
 .ip-desc {
-  font-size: medium;
+  font-size: x-large;
   /* position:absolute; */
   top: 30%;
+  line-height: 100%;
+  text-align: justify;
+  
 }
 
 .card {
@@ -143,12 +147,4 @@ button {
   margin-top: 30px;
   cursor: pointer;
   background-image: url(../../images/homepage_explore.jpg);
-}
-
-.ip-title{
-  padding-top: 8%;
-}
-.ip-desc{
-  font-size: x-large;
-  font-weight: 100;
 }

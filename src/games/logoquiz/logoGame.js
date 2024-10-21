@@ -81,7 +81,7 @@ const reset = () => {
 const quizEnd = () => {
   document.getElementsByClassName("container")[0].innerHTML = `
       <div class="col">
-          <h3 class="w-100"> Hi, you've scored ${correct} / ${total} </h3>
+          <h3 class="w-100"> You've scored ${correct} / ${total} </h3>
       </div>
   `;
 };
