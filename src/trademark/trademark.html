@@ -11,25 +11,41 @@
 <body>
     <div class="container">
         <div class="navbar">
-            <img src="/images/patent_logo2.jpeg" class="logo">
-            <nav>
-                <a href="../homepage/homepage.html" style="text-decoration: none">
+            <header>
+                <nav class="navbar">
                     <h2><span>IPowerUp</span></h2>
-                </a>
-                <ul>
-                    <li><a href="../homepage/homepage.html">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-
-                    <li><a href="#">Categories</a></li>
-                </ul>
-                <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
-            </nav>
-            <img src="../../images/menu.png" class="menu-icon">
+                    <div class="dropdown">
+                        <a href="../homepage/homepage.html" class="home">Home</a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Categories</button>
+                        <div class="dropdown-content">
+                            <a href="../patent/patent.html">Patent</a>
+                            <a href="../copyright/copyright.html">Copyright</a>
+                            <a href="../trademark/trademark.html">Trademarks</a>
+                            <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Games</button>
+                        <div class="dropdown-content">
+                            <a href="../games/quiz_trademark/tradesecret-quiz.html">Trademark Quiz</a>
+                            <a href="../games/quiz/tradesecret-quiz.html">Tradesecret Quiz</a>
+                            <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+                            <a href="../games/crossword/patent-crossword.html">Crossword</a>
+                            <a href="../games/wordsearch/Copyright-wordsearch.html">Wordsearch</a>
+                        </div>
+                    </div>
+                    <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+                    <a class="btn" href="../../index.html">Sign Out</a>
+                </nav>
+            </header>
         </div>
+    
         <div class="row">
             <div class="col col1">
                 <h1 class="ip-title">Trademark</h1>
-                <p class="ip-desc">The term trademark refers to a recognizable insignia, phrase, word, or symbol that
+                <p class="ip-desc1">The term trademark refers to a recognizable insignia, phrase, word, or symbol that
                     denotes a specific product and legally differentiates it from all other products of its kind.
                     A trademark exclusively identifies a product as belonging to a specific company and recognizes the
                     company's ownership of the brand.
@@ -37,7 +53,7 @@
                     registered.
                 </p>
                 &nbsp;
-                <p class="ip-desc">Trademarks not only help distinguish products within the legal and business systems
+                <p class="ip-desc2">Trademarks not only help distinguish products within the legal and business systems
                     but just as significantly with consumers.
                     They are used to identify and protect words and design elements that identify the source, owner, or
                     developer of a product or service.
@@ -52,7 +68,7 @@
                 </a>
             </div>
             <div class="col">
-                <div class="card"><iframe width="560" height="315"
+                <div class="card"><iframe width="650" height="415"
                         src="https://www.youtube.com/embed/J-PYuZOPrzI?si=-rB13VB3xSbhb19z" title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
