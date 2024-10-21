@@ -82,6 +82,7 @@ section {
   cursor: pointer;
   font-size: 1.5rem;
   margin-right: 20px;
+  font-weight: bold;
   /* Add space between buttons */
 }
 
@@ -158,6 +159,11 @@ section {
   color: rgb(171, 171, 240);
 }
 
+.navbar .dropbtn:hover {
+
+  color: rgb(171, 171, 240);
+}
+
 .navbar .btn1 {
   color: white;
   text-decoration: none;
@@ -170,11 +176,11 @@ section {
 }
 
 .navbar .btn:hover {
-  background: rgb(172, 172, 239);
+  background: rgb(206, 206, 210);
 }
 
 .navbar .btn1:hover {
-  background: rgb(172, 172, 239);
+  background: rgb(206, 206, 210);
 }
 
 .navbar .btn {
