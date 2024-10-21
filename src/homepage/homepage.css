@@ -4,7 +4,7 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   transition: .2s linear;
   scroll-behavior: smooth;
-  }
+}
 
 html {
   scroll-behavior: smooth;
@@ -15,8 +15,6 @@ html {
 section {
   padding: 2rem 9%;
 }
-
-
 
 .container {
   position: relative;
@@ -33,28 +31,26 @@ section {
   box-sizing: border-box;
 }
 
-.blur {
-  
-  background: rgba(255, 255, 255, 0.7); /* Light transparent background */
-  backdrop-filter: blur(8px); /* Blur effect */
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(8px);
-
-  padding-top: 60%;
+.col1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  width: 50%;
 }
 
-.logo {
-  width: 70px;
-  cursor: pointer;
-  padding-top: 5px;
+ .blur {
+  background-color: rgba(192, 225, 242, 0.8); /* Semi-transparent white */
+  padding: 150px;
+  border-radius: 10px;
+  backdrop-filter: blur(-10%);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(70px);
+  height: 200px;
+  width: 120%;
 }
 
-.menu-icon {
-  width: 30px;
-  cursor: pointer;
-  margin-left: 40px;
-}
 
 /* Navbar Styles */
 .navbar {
@@ -212,11 +208,19 @@ section {
 .row {
   display: flex;
   align-items: center;
-  height: 88%;
+  justify-content: space-between;
+  height: 90%;
+  width: 100%;
+  box-sizing: border-box;
+  border-color: #000;
 }
 
 .col {
   flex-basis: 50%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 h1 {
@@ -251,14 +255,15 @@ p {
   background-image: url(../../images/homepage_TRADE\ MARK.jpg);
   background-position: center;
   background-size: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease-in-out;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transform: translateX(-80px);
 }
 
 .card1:hover {
-  transform: translateY(-20px);
+  transform: scale(1.2) translateX(-80px);
 }
 
 .card1 p {
@@ -286,10 +291,11 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transform: translateX(-70px);
 }
 
 .card2:hover {
-  transform: translateY(-20px);
+  transform: scale(1.2) translateX(-70px);
 }
 
 .card2 p {
@@ -317,10 +323,12 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transform: translateX(-80px);
 }
 
 .card3:hover {
   transform: translateY(-20px);
+  transform: scale(1.2) translateX(-80px);
 }
 
 .card3 p {
@@ -348,10 +356,12 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transform: translateX(-70px);
 }
 
 .card4:hover {
   transform: translateY(-20px);
+  transform: scale(1.2) translateX(-70px);
 }
 
 .card4 p {
@@ -370,14 +380,125 @@ h5 {
   padding-right: 100px;
 }
 
-.ip-title span {
+/* .ip-title span {
   padding-bottom: 10px;
-}
+   */
+   .ip-title {
+    font-size: 3.5rem;
+    text-align: left; /* Left align the title */
+    top: 10%;
+  }
+  
+  .ip-desc {
+    font-size: 2rem;
+    text-align: justify;
+    transform: translateX(-82px);
+    
+  }
 
-.ip-desc {
-  font-size: 25px;
-  position: absolute;
-  right: 45%;
-  left: 3%;
-  text-align: justify;
-}
+
+  @media (max-width: 1200px) {
+    .navbar h2 span {
+      font-size: 5dvh;
+    }
+  
+    .container {
+      height: auto;
+      padding: 0 5%;
+    }
+  
+    .row {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .col1 {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .col {
+      flex-basis: 100%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 50px;
+      left: 4%;
+    }
+  
+    .ip-title {
+      font-size: 3rem;
+    }
+  
+    .ip-desc {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar h2 span {
+      font-size: 4dvh;
+    }
+  
+    .container {
+      height: auto;
+      padding: 0 3%;
+    }
+  
+    .col1 {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 40px;
+      top: 20%;
+      left: 3%;
+    }
+  
+    .ip-title {
+      font-size: 2.5rem;
+    }
+  
+    .ip-desc {
+      font-size: 1.25rem;
+    }
+  
+    .card1{
+      width: 120px;
+      height: 140px;
+    }
+    .card2 {
+      width: 120px;
+      height: 140px;
+    }
+    .card3 {
+      width: 120px;
+      height: 140px;
+    }
+    .card4 {
+      width: 120px;
+      height: 140px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .navbar h2 span {
+      font-size: 3.5dvh;
+    }
+  
+    h1 {
+      font-size: 35px;
+      top: 15%;
+      left: 2%;
+    }
+  
+    .ip-title {
+      font-size: 2rem;
+    }
+  
+    .ip-desc {
+      font-size: 1;
+    }
+  }
