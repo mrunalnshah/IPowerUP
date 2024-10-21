@@ -144,3 +144,103 @@ button {
   cursor: pointer;
   background-image: url(../../images/homepage_explore.jpg);
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../images/patent_bg.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+}
+
+nav {
+  box-sizing: border-box;
+  border: 2px solid rgb(38, 70, 158);
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+}
+
+
+.ip-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.ip-desc {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  width: 180px;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 12px 0;
+  transition: transform 0.5s;
+  border: 0;
+  border-radius: 1000px;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(98, 122, 189);
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+.top-right {
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  color: #fff;
+}
+
+.sliding-facts {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+  font-size: x-large;
+}
+
+.sliding-facts p {
+  margin: 0 15px;
+  line-height: 1;
+  font-size: x-large;
+}
+
+
+.nav-arrow {
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0 10px;
+  user-select: none;
+  color: #ffffff;
+}
+
+.nav-arrow:hover {
+  color: #ffde59;
+}
+
+.youtube-video {
+  margin-top: 20px;
+}
