@@ -21,8 +21,26 @@ let total = 3;  // Number of questions to be asked
 let questionBox = document.getElementById("questionBox");
 let allInputs = document.querySelectorAll("input[type='radio']");
 
+let quizName;
+const urlParams = new URLSearchParams(window.location.search);
+const quizType = urlParams.get('type')?.toLowerCase();
+
+console.log(quizType);
+
+if (quizType === "tradesecret") {
+  quizName = "quizQuestionTradesecret"
+} else if (quizType === "copyright") {
+  quizName = "quizQuestionCopyright"
+} else if (quizType === "patent") {
+  quizName = "quizQuestionPatent"
+} else if (quizType === "trademark") {
+  quizName = "quizQuestionTrademark"
+} else {
+  quizName = "quizQuestionTradesecret"
+}
+
 const fetchQuestions = async () => {
-  const snapshot = await getDocs(collection(db, "quizQuestionTradesecret"));
+  const snapshot = await getDocs(collection(db, quizName));
   const allQuestions = snapshot.docs.map(doc => {
     const data = doc.data();
     return {
@@ -42,7 +60,7 @@ const fetchQuestions = async () => {
 
 const loadQuestion = () => {
   if (index === total) {
-    return; 
+    return;
   }
   reset();
   const data = quizData[index];
@@ -64,10 +82,10 @@ document.querySelector("#submit").addEventListener("click", async function () {
   const data = quizData[index];
   const ans = getAnswer();
   if (ans === data.answer) {
-      correct++;
+    correct++;
   }
   index++;
-  
+
   loadQuestion();
 });
 
@@ -101,11 +119,11 @@ const fetchUserScore = async (email) => {
   const querySnapshot = await getDocs(q);
 
   if (!querySnapshot.empty) {
-      const userDoc = querySnapshot.docs[0];
-      return userDoc.data().quiz_tradesecret || 0; 
+    const userDoc = querySnapshot.docs[0];
+    return userDoc.data().quiz_tradesecret || 0;
   } else {
-      console.log("No such user!");
-      return 0;
+    console.log("No such user!");
+    return 0;
   }
 };
 
@@ -115,19 +133,19 @@ const updateUserScore = async (email, correct) => {
   const querySnapshot = await getDocs(q);
 
   if (!querySnapshot.empty) {
-      const userDoc = querySnapshot.docs[0];
-      const userDocRef = doc(db, "users", userDoc.id);
+    const userDoc = querySnapshot.docs[0];
+    const userDocRef = doc(db, "users", userDoc.id);
 
-      const existingScore = await fetchUserScore(email);
-      const newScore = existingScore + correct;
+    const existingScore = await fetchUserScore(email);
+    const newScore = existingScore + correct;
 
-      await updateDoc(userDocRef, {
-          quiz_tradesecret: newScore 
-      });
-      
-      console.log(`Updated score for ${email}: ${newScore}`);
+    await updateDoc(userDocRef, {
+      quiz_tradesecret: newScore
+    });
+
+    console.log(`Updated score for ${email}: ${newScore}`);
   } else {
-      console.log("No user found to update score.");
+    console.log("No user found to update score.");
   }
 };
 
