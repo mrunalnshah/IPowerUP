@@ -1,56 +1,48 @@
-const quizData = [
-  {
-    question: "What is a trade secret?",
-    a: "A publicly disclosed invention",
-    b: "A confidential business asset or information",
-    c: "A patented product",
-    d: "A registered trademark",
-    correct: "b",
-  },
-  {
-    question: "Which of the following is NOT considered a trade secret?",
-    a: "Customer lists",
-    b: "Employee salaries",
-    c: "Manufacturing processes",
-    d: "Marketing brochures",
-    correct: "b",
-  },
-  {
-    question:
-      "Which of the following is a common characteristic of trade secrets?",
-    a: "They are publicly disclosed.",
-    b: "They have a limited lifespan.",
-    c: "They are protected by patents.",
-    d: "They provide a competitive advantage.",
-    correct: "d",
-  },
-  {
-    question: "Trade secret protection lasts for:",
-    a: "10 years",
-    b: "As long as it remains secret",
-    c: "20 years",
-    d: "50 years",
-    correct: "b",
-  },
-  {
-    question: "Trade secret protection is typically applicable to:",
-    a: "Publicly available information",
-    b: "Information that is not valuable",
-    c: "Confidential and valuable information",
-    d: "Information created by the government",
-    correct: "c",
-  },
-];
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getFirestore, collection, getDocs, query, where, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyC2fy_gS6IXKMfUeEf_4nydw_UAckDfnMA",
+  authDomain: "ipowerup.firebaseapp.com",
+  projectId: "ipowerup",
+  storageBucket: "ipowerup.appspot.com",
+  messagingSenderId: "241303702736",
+  appId: "1:241303702736:web:ecb72af2c1b384682d22d5",
+  measurementId: "G-PC9W080KB0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let quizData = [];
 let index = 0;
-let correct = 0,
-  incorrect = 0,
-  total = quizData.length;
+let correct = 0;
+let total = 3;  // Number of questions to be asked
 let questionBox = document.getElementById("questionBox");
 let allInputs = document.querySelectorAll("input[type='radio']");
+
+const fetchQuestions = async () => {
+  const snapshot = await getDocs(collection(db, "quizQuestionTradesecret"));
+  const allQuestions = snapshot.docs.map(doc => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      question: data.question,
+      a: data.a,
+      b: data.b,
+      c: data.c,
+      d: data.d,
+      answer: data.answer
+    };
+  });
+
+  quizData = allQuestions.sort(() => 0.5 - Math.random()).slice(0, total);
+  loadQuestion();
+};
+
 const loadQuestion = () => {
-  if (total === index) {
-    return quizEnd();
+  if (index === total) {
+    return; 
   }
   reset();
   const data = quizData[index];
@@ -61,18 +53,21 @@ const loadQuestion = () => {
   allInputs[3].nextElementSibling.innerText = data.d;
 };
 
-document.querySelector("#submit").addEventListener("click", function () {
+document.querySelector("#submit").addEventListener("click", async function () {
+  if (index === total) {
+    const email = localStorage.getItem('email');
+    await updateUserScore(email, correct);
+    quizEnd();
+    return;
+  }
+
   const data = quizData[index];
   const ans = getAnswer();
-  if (ans === data.correct) {
-    correct++;
-  } else {
-    incorrect++;
+  if (ans === data.answer) {
+      correct++;
   }
   index++;
-  if (index === Number(quizData.length - 1)) {
-    document.querySelector("#submit").textContent = "Submit";
-  }
+  
   loadQuestion();
 });
 
@@ -93,11 +88,47 @@ const reset = () => {
 };
 
 const quizEnd = () => {
-  // console.log(document.getElementsByClassName("container"));
   document.getElementsByClassName("container")[0].innerHTML = `
-      <div class="col">
-          <h3 class="w-100"> Your score is ${correct} / ${total} </h3>
-      </div>
-  `;
+        <div class="col">
+            <h3 class="w-100"> Your score is ${correct} / ${total} </h3>
+        </div>
+    `;
 };
-loadQuestion(index);
+
+const fetchUserScore = async (email) => {
+  const usersCollection = collection(db, "users");
+  const q = query(usersCollection, where("email", "==", email));
+  const querySnapshot = await getDocs(q);
+
+  if (!querySnapshot.empty) {
+      const userDoc = querySnapshot.docs[0];
+      return userDoc.data().quiz_tradesecret || 0; 
+  } else {
+      console.log("No such user!");
+      return 0;
+  }
+};
+
+const updateUserScore = async (email, correct) => {
+  const usersCollection = collection(db, "users");
+  const q = query(usersCollection, where("email", "==", email));
+  const querySnapshot = await getDocs(q);
+
+  if (!querySnapshot.empty) {
+      const userDoc = querySnapshot.docs[0];
+      const userDocRef = doc(db, "users", userDoc.id);
+
+      const existingScore = await fetchUserScore(email);
+      const newScore = existingScore + correct;
+
+      await updateDoc(userDocRef, {
+          quiz_tradesecret: newScore 
+      });
+      
+      console.log(`Updated score for ${email}: ${newScore}`);
+  } else {
+      console.log("No user found to update score.");
+  }
+};
+
+fetchQuestions();
