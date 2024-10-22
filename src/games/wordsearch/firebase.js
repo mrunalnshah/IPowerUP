@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const updateUserScore = async (email, score) => {
+window.updateUserScore = async (email, score) => {
     const usersCollection = collection(db, "users");
     const q = query(usersCollection, where("email", "==", email));
     const querySnapshot = await getDocs(q);
@@ -22,12 +22,14 @@ const updateUserScore = async (email, score) => {
     if (!querySnapshot.empty) {
         const userDoc = querySnapshot.docs[0];
         const userDocRef = doc(db, "users", userDoc.id);
-
-        const existingScore = userDoc.data().wordsearch_score || 0; // Adjust field name as necessary
+        const totalScore = userDoc.data().totalScore || 0;
+        const existingScore = userDoc.data().wordsearch_score || 0;
         const newScore = existingScore + score;
+        const newTotalScore = totalScore + score;
 
         await updateDoc(userDocRef, {
-            wordsearch_score: newScore
+            wordsearch_score: newScore,
+            totalScore : newTotalScore
         });
 
         console.log(`Updated score for ${email}: ${newScore}`);

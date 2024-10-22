@@ -31,7 +31,7 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
         ["japan", "china", "india", "russia"],
         ["south africa", "egypt", "turkey", "saudi arabia"]],
 
-        "Trademark!✨": [["trademark", "minnie", "cinderella", "pixar"],
+        "Trademark!✨": [["trademark", "AAAAAAAAAA", "cinderella", "pixar"],
         ["frozen", "aladdin", "little mermaid", "goofy"],
         ["donald duck", "snow white", "mulan", "moana"],
         ["jungle book", "pocahontas", "pinocchio", "General hux"],

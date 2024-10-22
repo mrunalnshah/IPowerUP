@@ -120,7 +120,7 @@ const fetchUserScore = async (email) => {
 
   if (!querySnapshot.empty) {
     const userDoc = querySnapshot.docs[0];
-    return userDoc.data().quiz_tradesecret || 0;
+    return userDoc.data().quizScore || 0;
   } else {
     console.log("No such user!");
     return 0;
@@ -135,12 +135,14 @@ const updateUserScore = async (email, correct) => {
   if (!querySnapshot.empty) {
     const userDoc = querySnapshot.docs[0];
     const userDocRef = doc(db, "users", userDoc.id);
-
+    const totalScore = userDoc.data().totalScore || 0;
     const existingScore = await fetchUserScore(email);
     const newScore = existingScore + correct;
+    const newTotalScore = totalScore + correct;
 
     await updateDoc(userDocRef, {
-      quiz_tradesecret: newScore
+      quiz: newScore,
+      totalScore: newTotalScore
     });
 
     console.log(`Updated score for ${email}: ${newScore}`);

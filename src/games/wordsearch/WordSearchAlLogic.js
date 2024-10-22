@@ -40,6 +40,8 @@ function WordSearchAILogic(updateGameState, timerId, listId, wordFound, wordLoc)
         //console.log('List Id:' + listId);
 
         //initiate random word selection
+        localStorage.setItem('wordSearchAI', 'mySolved');
+        
         getRandomWord();
 
     }
@@ -79,7 +81,7 @@ function WordSearchAILogic(updateGameState, timerId, listId, wordFound, wordLoc)
         // Add the selected word to wordFound
         wordFound.push(randomWord);
         AIcount++;
-
+        
         checkPuzzleSolved(availableWords, processedList, AIcount)
         gridSolve(randomWord, wordLoc)
 
@@ -94,6 +96,7 @@ function WordSearchAILogic(updateGameState, timerId, listId, wordFound, wordLoc)
 
         // Filter out words that are already found
         availableWords = processedList.filter(word => !wordFound.includes(word));
+
 
         //console.log(availableWords.length)
 
