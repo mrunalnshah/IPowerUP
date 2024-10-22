@@ -1,10 +1,12 @@
 const facts = [
-    "Fact 1: Copyright lasts the author's lifetime plus 70 years.",
-    "Fact 2: Copyright protects both published and unpublished works.",
-    "Fact 3: Copyright does not protect ideas, only their expression.",
-    "Fact 4: Infringement can lead to fines and legal action.",
-    "Fact 5: Fair use allows limited copying for certain purposes."
+    `Fact 1: The Statute of Anne, passed in England in 1710, was a milestone in the history of copyright law.
+     It recognized that authors should be the primary beneficiaries of copyright law and established the idea that such copyrights should have only limited duration (then set at 28 years), after which works would pass into the public.`,
+    `Fact 2: The Copyright Act of 1957 provides three types of remedies: administrative, civil, and criminal. The criminal remedies are covered under Chapter 13 of the statute, and the penalties upon infringement include imprisonment of up to 3 years along with a fine of up to Rs.200,000.`,
+    `Fact 3: Copyright protects the specific way you express your ideas, not the ideas themselves. This distinction encourages a balance between fostering creativity and allowing others to innovate.`,
+    `Fact 4: Copyright, the exclusive, legally secured right to reproduce, distribute, and perform a literary, musical, dramatic, or artistic work.`,
+    `Fact 5: The Copyright Act of 1957 marked the inception of Copyright legislation in Independent India. Till now, the law has undergone six amendments (the most recent being the Copyright Amendment Act, 2012).`
 ];
+
 
 let currentFactIndex = 0;
 
