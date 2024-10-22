@@ -10,13 +10,11 @@
 
 <body>
   <div class="container">
-    <div class="navbar">
-      <header>
-        <nav class="navbar">
-          <h2><span>IPowerUp</span></h2>
-          <div class="dropdown">
-            <a href="homepage.html" class="home">Home</a>
-          </div>
+    <header>
+      <nav class="navbar">
+        <h2><span>IPowerUp</span></h2>
+        <div class="nav-links">
+          <a href="homepage.html" class="home">Home</a>
           <div class="dropdown">
             <button class="dropbtn">Categories</button>
             <div class="dropdown-content">
@@ -30,7 +28,7 @@
             <button class="dropbtn">Games</button>
             <div class="dropdown-content">
               <a href="../games/quiz_trademark/tradesecret-quiz.html">Trademark Quiz</a>
-              <a href="../games/quiz/tradesecret-quiz.html">Tradesecret Quiz</a>
+              <a href="../games/quiz/tradesecret-quiz.html">Trade Secret Quiz</a>
               <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
               <a href="../games/crossword/patent-crossword.html">Crossword</a>
               <a href="../games/wordsearch/Copyright-wordsearch.html">Wordsearch</a>
@@ -38,52 +36,38 @@
           </div>
           <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
           <a class="btn" href="../../index.html">Sign Out</a>
-        </nav>
-      </header>
-    </div>
+        </div>
+      </nav>
+    </header>
 
     <div class="row">
-      <div class="col col1">
-        <h1 class="ip-title"><span>Intellectual property</span></h1>
-
-        <p class="ip-desc">
-          Intellectual property is a category of property that includes
-          intangible creations of the human intellect. There are many types of
-          intellectual property, and some countries recognize more than
-          others. The best-known types are patents, copyrights, trademarks,
-          and trade secrets.
-        </p>
-        <!-- <button type="button">Explore</button> -->
-      </div>
-      <div class="col">
-        <a href="../trademark/trademark.html">
-          <div class="card1">
-            <!-- <h5>
-              <a href="trademark.html">
-                <img src="images/homepage_TRADE MARK.jpg" />
-              </a>
-            </h5> -->
-          </div>
-        </a>
-        <a href="../patent/patent.html">
-          <div class="card2">
-            <h5></h5>
-          </div>
-        </a>
-        <a href="../copyright/copyright.html">
-          <div class="card3">
-            <h5></h5>
-          </div>
-        </a>
-        <a href="../tradesecret/tradesecret.html">
-          <div class="card4">
-            <h5></h5>
-          </div>
-        </a>
+      <div class="blur">
+        <div class="col col1">
+          <h1 class="ip-title"><span>Intellectual Property</span></h1>
+          <p class="ip-desc">
+            Intellectual property is a category of property that includes intangible creations of the human intellect. The best-known types are patents, copyrights, trademarks, and trade secrets.
+          </p>
+        </div>
       </div>
     </div>
+
+    <div class="col">
+      <a href="../trademark/trademark.html">
+        <div class="card1"></div>
+      </a>
+      <a href="../patent/patent.html">
+        <div class="card2"></div>
+      </a>
+      <a href="../copyright/copyright.html">
+        <div class="card3"></div>
+      </a>
+      <a href="../tradesecret/tradesecret.html">
+        <div class="card4"></div>
+      </a>
+    </div>
   </div>
-  <script type="module" src="homepage.js"> </script>
+
+  <script type="module" src="homepage.js"></script>
 </body>
 
 </html>
