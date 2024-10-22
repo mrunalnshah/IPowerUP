@@ -23,12 +23,12 @@ window.updateUserScore = async (email, score) => {
         const userDoc = querySnapshot.docs[0];
         const userDocRef = doc(db, "users", userDoc.id);
         const totalScore = userDoc.data().totalScore || 0;
-        const existingScore = userDoc.data().wordsearch_score || 0;
+        const existingScore = userDoc.data().wordsearch || 0;
         const newScore = existingScore + score;
         const newTotalScore = totalScore + score;
 
         await updateDoc(userDocRef, {
-            wordsearch_score: newScore,
+            wordsearch: newScore,
             totalScore : newTotalScore
         });
 

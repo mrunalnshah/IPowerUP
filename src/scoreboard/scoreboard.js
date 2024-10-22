@@ -43,8 +43,8 @@ function populateLeaderboard(players, tableBodyId) {
     });
 }
 
-fetchLeaderboard('quiz_trademark', 'quiz-trademark');
+fetchLeaderboard('totalScore', 'overall');
 fetchLeaderboard('logoquiz', 'logo-trademark');
-fetchLeaderboard('quiz_tradesecret', 'quiz-tradesecret');
+fetchLeaderboard('quiz', 'quiz');
 fetchLeaderboard('wordsearch', 'wordsearch');
 fetchLeaderboard('crossword', 'crossword');
