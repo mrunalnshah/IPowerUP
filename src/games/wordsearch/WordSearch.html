@@ -26,10 +26,11 @@
         <div id="Timer" class="hide">Time Left: 40s</div>
         <script>
             function returnToMain() {
-                let mySolved = parseInt(localStorage.getItem("wordSearchScore")); 
+                let mySolved = parseInt(localStorage.getItem("wordSearchScore"));
                 let userEmail = localStorage.getItem("email");
                 console.log(mySolved);
                 updateUserScore(userEmail, mySolved);
+                window.location.href = "../../homepage/homepage.html";
             }
         </script>
     </section>
