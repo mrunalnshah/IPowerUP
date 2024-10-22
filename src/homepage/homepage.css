@@ -364,6 +364,5 @@ h5 {
   position: absolute;
   right: 45%;
   left: 3%;
-  text-align: center;
-  line-height: 1.5;
+  text-align: justify;
 }

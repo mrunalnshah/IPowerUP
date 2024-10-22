@@ -84,7 +84,6 @@ nav .btn {
 .col {
   flex-basis: 50%;
   bottom: 5%;
-  max-width: 300%;
 }
 
 h1 {
@@ -103,7 +102,6 @@ p {
 
 .col1 {
   padding-right: 100px;
-  width: 80%;
 }
 
 .ip-title {
@@ -186,9 +184,6 @@ nav {
 .ip-desc {
   font-size: 16px;
   margin-bottom: 20px;
-text-align: center;
-line-height: 1.5;
-
 }
 
 .button-group {
@@ -226,14 +221,13 @@ button:hover {
   align-items: center;
   margin-bottom: 10px;
 
-  font-size: 150%;
+  font-size: x-large;
 }
 
 .sliding-facts p {
   margin: 0 15px;
   line-height: 1;
-
-  font-size: 70%;
+  font-size: x-large;
 }
 
 
