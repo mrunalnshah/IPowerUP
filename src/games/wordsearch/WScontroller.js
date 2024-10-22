@@ -101,6 +101,8 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
         isFirstRound = true;
         continueGame = true;
 
+        localStorage.setItem("wordSearchScore", 0);
+
         // Clear the timer reference
         timerInterval = null;
     }
@@ -200,7 +202,7 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
         $(gameId).empty();
         $(listId).empty();
         $(themeId).empty();
-
+        localStorage.setItem("wordSearchScore", 0);
         document.getElementById('gameInfo').textContent = 'Click-and-Drag to select words! Or press Race the Clock for a Challenge!';
         //calls the set up to create a new word search game
         setUpWordSearch();
