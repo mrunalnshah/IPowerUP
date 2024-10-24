@@ -14,21 +14,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-window.updateUserScore = async (email, score) => {
+window.updateUserScore = async (email, score, gameType) => {
     const usersCollection = collection(db, "users");
     const q = query(usersCollection, where("email", "==", email));
     const querySnapshot = await getDocs(q);
+
+    let wordSearchType;
+    if (gameType == 0){
+        wordSearchType = 'wordsearchScoreCopyright';
+    }else if(gameType == 1){
+        wordSearchType = 'wordsearchScorePatent';
+    }else if(gameType == 2){
+        wordSearchType = 'wordsearchScoreTrademark';
+    }else if(gameType == 3){
+        wordSearchType = 'wordsearchScoreTradesecret';
+    }else {
+        wordSearchType = 'wordsearchScoreCopyright';
+    }
 
     if (!querySnapshot.empty) {
         const userDoc = querySnapshot.docs[0];
         const userDocRef = doc(db, "users", userDoc.id);
         const totalScore = userDoc.data().totalScore || 0;
-        const existingScore = userDoc.data().wordsearch || 0;
+        const existingScore = userDoc.data()[wordSearchType] || 0;
         const newScore = existingScore + score;
         const newTotalScore = totalScore + score;
 
         await updateDoc(userDocRef, {
-            wordsearch: newScore,
+            [wordSearchType]: newScore,
             totalScore : newTotalScore
         });
 

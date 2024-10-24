@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-window.updateUserScore = async (email, score) => {
+window.updateUserScore = async (email, score, gameType) => {
     const usersCollection = collection(db, "users");
     const q = query(usersCollection, where("email", "==", email));
     const querySnapshot = await getDocs(q);
@@ -23,12 +23,26 @@ window.updateUserScore = async (email, score) => {
         const userDoc = querySnapshot.docs[0];
         const userDocRef = doc(db, "users", userDoc.id);
         const totalScore = userDoc.data().totalScore || 0;
-        const existingScore = userDoc.data().crossword || 0;
+
+        let scoreType;
+        if(gameType == 0){
+            scoreType = 'crosswordScoreTrademark';
+        }else if(gameType == 1){
+            scoreType = 'crosswordScoreCopyright';
+        }else if(gameType == 2){
+            scoreType = 'crosswordScorePatent';
+        }else if(gameType == 3){
+            scoreType = 'crosswordScoreTradesecret';
+        }else {
+            scoreType = 'crosswordScoreTrademark';
+        }
+
+        const existingScore = userDoc.data()[scoreType] || 0;
         const newScore = existingScore + score;
         const newTotalScore = totalScore + score;
 
         await updateDoc(userDocRef, {
-            crossword: newScore,
+            [scoreType]: newScore,
             totalScore: newTotalScore
         });
 

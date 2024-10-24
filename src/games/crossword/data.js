@@ -60,22 +60,23 @@
         console.log(wordSearchType);
 
         var randomIndex = 0
-        if (wordSearchType === "tradesecret") {
-            randomIndex = 3
-            document.getElementById("gameType").innerHTML = "Tradesecret";
+        if (wordSearchType === "trademark") {
+            randomIndex = 0
+            document.getElementById("gameType").innerHTML = "Trademark";
         } else if (wordSearchType === "copyright") {
             randomIndex = 1
             document.getElementById("gameType").innerHTML = "Copyright";
         } else if (wordSearchType === "patent") {
             randomIndex = 2
             document.getElementById("gameType").innerHTML = "Patent";
-        } else if (wordSearchType === "trademark") {
-            randomIndex = 0
-            document.getElementById("gameType").innerHTML = "Trademark";
+        } else if (wordSearchType === "tradesecret") {
+            randomIndex = 3
+            document.getElementById("gameType").innerHTML = "Tradesecret";
         } else {
             randomIndex = 0
             document.getElementById("gameType").innerHTML = "Trademark";
         }
+        localStorage.setItem("crosswordType", randomIndex);
         $("#puzzle-wrapper").crossword(puzzleData[randomIndex]);
     });
 })(jQuery);

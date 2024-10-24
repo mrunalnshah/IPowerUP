@@ -28,10 +28,12 @@
             function returnToMain() {
                 let mySolved = parseInt(localStorage.getItem("wordSearchScore"));
                 let userEmail = localStorage.getItem("email");
+                let gameType = localStorage.getItem("wordsearchType");
                 console.log(mySolved);
 
-                updateUserScore(userEmail, mySolved).then(() => {
+                updateUserScore(userEmail, mySolved, gameType).then(() => {
                     localStorage.setItem("wordSearchScore", 0);
+                    localStorage.setItem("wordsearchType", 0);
                     window.location.href = "../../homepage/homepage.html";
                 }).catch((error) => {
                     console.error("Error updating score:", error);

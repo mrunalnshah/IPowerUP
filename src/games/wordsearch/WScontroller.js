@@ -116,7 +116,7 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
         let wordsFound = [];
 
         //generates a random theme 
-        var searchTypesArray = Object.keys(searchTypes); 
+        var searchTypesArray = Object.keys(searchTypes);
 
         let wordSearchName;
         const urlParams = new URLSearchParams(window.location.search);
@@ -125,18 +125,18 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
         console.log(wordSearchType);
 
         var randomIndex = 0
-        if (wordSearchType === "tradesecret") {
-            randomIndex = 3
-        } else if (wordSearchType === "copyright") {
+        if (wordSearchType === "copyright") {
             randomIndex = 0
         } else if (wordSearchType === "patent") {
             randomIndex = 1
         } else if (wordSearchType === "trademark") {
             randomIndex = 2
+        } else if (wordSearchType == 'tradesecret') {
+            randomIndex = 3
         } else {
             randomIndex = 0
         }
-
+        localStorage.setItem("wordsearchType", randomIndex);
         var listOfWords = searchTypes[searchTypesArray[randomIndex]]; //retrieves the matrix of words from random index
 
         //converts letters to uppercase

@@ -1,16 +1,9 @@
-/*
-Created by Catherine Rodriquez
-*/
-
-
-/* makes all screens the same font */
 * {
     padding: 0;
     margin: 0;
     font-family: "Itim", cursive;
 }
 
-/* display for exit button */
 #return {
     padding: 5px;
     text-align: left;
@@ -36,7 +29,6 @@ h2,
 
 }
 
-/* used to display in the center the New Game button and Race the Clock button*/
 #gameOptions,
 #solve {
     display: flex;
@@ -137,13 +129,10 @@ body {
 
     /*ensures text can't be accidentally selected*/
     cursor: default;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
+    user-select: none;
     -webkit-touch-callout: none;
-
 }
+
 
 /* mouse color on table*/
 .cell:hover {

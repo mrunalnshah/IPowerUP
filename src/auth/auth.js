@@ -47,10 +47,6 @@ document.querySelector('.form.sign-up button').addEventListener('click', (event)
             userId: user.uid,
             username: username,
             email: email,
-            crossword: 0,
-            logoquiz: 0,
-            quiz: 0,
-            wordsearch: 0,
             totalScore: 0,
         })
         .then(() => {

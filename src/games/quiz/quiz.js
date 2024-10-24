@@ -24,19 +24,25 @@ let allInputs = document.querySelectorAll("input[type='radio']");
 let quizName;
 const urlParams = new URLSearchParams(window.location.search);
 const quizType = urlParams.get('type')?.toLowerCase();
+let quizScoreType;;
 
 console.log(quizType);
 
 if (quizType === "tradesecret") {
-  quizName = "quizQuestionTradesecret"
+  quizName = "quizQuestionTradesecret";
+  quizScoreType = 'quizScoreTradesecret';
 } else if (quizType === "copyright") {
-  quizName = "quizQuestionCopyright"
+  quizName = "quizQuestionCopyright";
+  quizScoreType = 'quizScoreCopyright';
 } else if (quizType === "patent") {
-  quizName = "quizQuestionPatent"
+  quizName = "quizQuestionPatent";
+  quizScoreType = 'quizScorePatent';
 } else if (quizType === "trademark") {
-  quizName = "quizQuestionTrademark"
+  quizName = "quizQuestionTrademark";
+  quizScoreType = 'quizScoreTrademark';
 } else {
-  quizName = "quizQuestionTradesecret"
+  quizName = "quizQuestionTradesecret";
+  quizScoreType = 'quizScoreTradesecret';
 }
 
 const fetchQuestions = async () => {
@@ -120,7 +126,7 @@ const fetchUserScore = async (email) => {
 
   if (!querySnapshot.empty) {
     const userDoc = querySnapshot.docs[0];
-    return userDoc.data().quizScore || 0;
+    return userDoc.data()[quizScoreType] || 0;
   } else {
     console.log("No such user!");
     return 0;
@@ -141,7 +147,7 @@ const updateUserScore = async (email, correct) => {
     const newTotalScore = totalScore + correct;
 
     await updateDoc(userDocRef, {
-      quiz: newScore,
+      [quizScoreType]: newScore,
       totalScore: newTotalScore
     });
 
