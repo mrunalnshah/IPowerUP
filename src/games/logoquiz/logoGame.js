@@ -63,7 +63,15 @@ const loadQuestion = () => {
     imgOptionB.src = imgB.src;
     loading.style.display = 'none';
   };
+
+  imgOptionA.addEventListener('click', () => {
+    document.getElementById('optionA').checked = true;
+  });
+  imgOptionB.addEventListener('click', () => {
+    document.getElementById('optionB').checked = true;
+  });
 };
+
 
 const convertGstoURL = (gsPath) => {
   const baseUrl = "https://firebasestorage.googleapis.com/v0/b/ipowerup.appspot.com/o/";
