@@ -2,7 +2,8 @@
   $.fn.crossword = function (entryData) {
     var puzz = {};
     puzz.data = entryData;
-
+    let totalSolved = 0;
+    localStorage.setItem("crosswordScore", totalSolved);
     this.after(
       '<div id="puzzle-clues"><h1>Across</h1><ol id="across"></ol><h1>Down</h1><ol id="down"></ol></div>'
     );
@@ -247,6 +248,11 @@
 
           solved.push(valToCheck);
           solvedToggle = true;
+
+          totalSolved++; 
+          localStorage.setItem("crosswordScore", totalSolved);
+          $("#solved-count").text(totalSolved);
+
           return;
         }
 

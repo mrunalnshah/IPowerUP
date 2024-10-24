@@ -9,7 +9,7 @@ Sets up the logic of the word search game by inserting the given list of words i
 a 2D matrix in various orientations (global objects defined in wordpaths.js)
 */
 
-function WordSearchLogic(gameId,list) {
+function WordSearchLogic(gameId, list) {
 
 	//object to hold common board variables
 	var board = {
@@ -33,7 +33,7 @@ function WordSearchLogic(gameId,list) {
 	/** setUpGame is a property of WordSearchLogic that initializes the creation of the 
 	 * word matrix!
 	 */
-	this.setUpGame = function() {
+	this.setUpGame = function () {
 
 		//creates a 2D array with the given board size
 		board.matrix = createMatrix(board.size);
@@ -46,7 +46,7 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //this function creates a matrix
+	//this function creates a matrix
 	function createMatrix(size) {
 
 		//creates an array of length size
@@ -63,8 +63,8 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //this function loops through the list of words anf fits them inside the 2D array
-    //that represents a word search grid of letters
+	//this function loops through the list of words anf fits them inside the 2D array
+	//that represents a word search grid of letters
 	function fitWordsIntoMatrix(wordList, matrix) {
 
 		//loops through rows
@@ -77,9 +77,9 @@ function WordSearchLogic(gameId,list) {
 				var trimmedWord = trimWord(wordList[i][j]);
 
 				//tries 50 times to fit the word into the matrix
-				for (var k = 0; thisWord.wordFitted == false && k < 100; k++) {		
+				for (var k = 0; thisWord.wordFitted == false && k < 100; k++) {
 
-					insertWordIntoMatrix(trimmedWord, matrix);	
+					insertWordIntoMatrix(trimmedWord, matrix);
 
 				}
 
@@ -97,9 +97,9 @@ function WordSearchLogic(gameId,list) {
 				//otherwise, set it to false for next iteration
 				else {
 
-					thisWord.wordFitted = false; 
+					thisWord.wordFitted = false;
 
-				}	
+				}
 
 			}
 
@@ -108,7 +108,7 @@ function WordSearchLogic(gameId,list) {
 	}
 
 
-    //this function generates random coordinates and tries to check for valid paths the word can take at the coordinate
+	//this function generates random coordinates and tries to check for valid paths the word can take at the coordinate
 	function insertWordIntoMatrix(word, matrix) {
 
 		//random row and column value
@@ -125,11 +125,11 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //finds possible orientation for the word to take
+	//finds possible orientation for the word to take
 	function checkPossibleOrientations(w, m, x, y) {
 
-        //converts object property names into an array and loops through all the property named in the forEach() section
-		Object.keys(paths).forEach(function(i) {
+		//converts object property names into an array and loops through all the property named in the forEach() section
+		Object.keys(paths).forEach(function (i) {
 
 			//checks if the orientation fits using the property name (i) in the paths object
 			doesOrientationFit(w, m, x, y, paths[i]);
@@ -140,8 +140,8 @@ function WordSearchLogic(gameId,list) {
 		if (thisWord.viablePaths.length != 0) {
 
 			//randomly choose a path to set the word into
-			var randIndex = getRandomNum(thisWord.viablePaths.length);
-			var finalOrientation = thisWord.viablePaths[randIndex];
+			var randomIndex = getRandomNum(thisWord.viablePaths.length);
+			var finalOrientation = thisWord.viablePaths[randomIndex];
 
 			//empty the array of possible paths
 			thisWord.viablePaths = [];
@@ -150,7 +150,7 @@ function WordSearchLogic(gameId,list) {
 			 * will take into wordLocations (a handy reference for where all the
 			 * words are!)
 			 */
-			wordLocations[w] = {x: x, y: y, p: finalOrientation};
+			wordLocations[w] = { x: x, y: y, p: finalOrientation };
 
 			//finally sets the word inside the matrix!
 			setWordIntoMatrix(w, m, x, y, finalOrientation);
@@ -159,7 +159,7 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //properly places the given word into the puzzle array
+	//properly places the given word into the puzzle array
 	function setWordIntoMatrix(w, m, x, y, p) {
 
 		/** initialized variables: k - for word length
@@ -184,7 +184,7 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //checks if the given word fits inside the matrix with the passed in orientation
+	//checks if the given word fits inside the matrix with the passed in orientation
 	function doesOrientationFit(w, m, x, y, p) {
 
 		//how many letters fit 
@@ -229,11 +229,11 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //fills empty indices in the 2D array with randomly generated letters
+	//fills empty indices in the 2D array with randomly generated letters
 	function fillWithRandomLetters(matrix) {
 
 		//loops through rows
-		for (var i = 0; i < matrix.length; i++ ) {
+		for (var i = 0; i < matrix.length; i++) {
 
 			//loops through columns
 			for (var j = 0; j < matrix[i].length; j++) {
@@ -242,7 +242,7 @@ function WordSearchLogic(gameId,list) {
 				if (jQuery.isEmptyObject(matrix[i][j])) {
 
 					//set index equal to random uppercase letter
-					matrix[i][j] = String.fromCharCode(65 + Math.random()*26);
+					matrix[i][j] = String.fromCharCode(65 + Math.random() * 26);
 
 				}
 
@@ -252,36 +252,36 @@ function WordSearchLogic(gameId,list) {
 
 	}
 
-    //removes the array element from the array
+	//removes the array element from the array
 	function remove(array, indexElement) {
 		return array.filter(i => i !== indexElement);
 	}
 
 
-    //generates a random number
+	//generates a random number
 	function getRandomNum(bound) {
-		return Math.floor(Math.random()*(bound));
+		return Math.floor(Math.random() * (bound));
 	}
-	
-    //'trims' the given word by removing non-alphanumeric characters
+
+	//'trims' the given word by removing non-alphanumeric characters
 	function trimWord(word) {
 		return word.replace(/\W/g, "");
 	}
 
 
-    //getter method for the word search grid the words are placed in
-	this.getMatrix = function() {
+	//getter method for the word search grid the words are placed in
+	this.getMatrix = function () {
 		return board.matrix;
 	}
 
 
-    //getter for the locations and orientations of all the words placed in the word search puzzle
-	this.getWordLocations = function() {
-		return wordLocations; 
+	//getter for the locations and orientations of all the words placed in the word search puzzle
+	this.getWordLocations = function () {
+		return wordLocations;
 	}
 
-    //getter method for list of words to find
-	this.getListOfWords = function() {
+	//getter method for list of words to find
+	this.getListOfWords = function () {
 		return list;
 	}
 

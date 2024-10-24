@@ -29,8 +29,13 @@
                 let mySolved = parseInt(localStorage.getItem("wordSearchScore"));
                 let userEmail = localStorage.getItem("email");
                 console.log(mySolved);
-                updateUserScore(userEmail, mySolved);
-                window.location.href = "../../homepage/homepage.html";
+
+                updateUserScore(userEmail, mySolved).then(() => {
+                    localStorage.setItem("wordSearchScore", 0);
+                    window.location.href = "../../homepage/homepage.html";
+                }).catch((error) => {
+                    console.error("Error updating score:", error);
+                });
             }
         </script>
     </section>

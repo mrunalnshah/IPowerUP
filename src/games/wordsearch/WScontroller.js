@@ -19,25 +19,25 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
     //an object containing various themes/words for the game
     var searchTypes = {
 
-        "Copyright!": [["Copyright", "pixels", "algorithm", "highscore"],
+        "Copyright!": [["Copyright", "AAAAAAAAAA", "algorithm", "highscore"],
         ["donkey kong", "quarter", "scoreboard", "space invaders"],
         ["tron", "gameover", "leaderboard", "galaga"],
         ["defender", "powerup", "sprite", "frogger"],
         ["joystick", "asteriods", "pacman", "centipede"]],
 
-        "Patent!": [["patent", "canada", "brazil", "germany"],
+        "Patent!": [["patent", "AAAAAAAAAA", "brazil", "germany"],
         ["france", "italy", "united kingdom", "australia"],
         ["south korea", "mexico", "argentina", "spain"],
         ["japan", "china", "india", "russia"],
         ["south africa", "egypt", "turkey", "saudi arabia"]],
 
-        "Trademark!✨": [["trademark", "AAAAAAAAAA", "cinderella", "pixar"],
+        "Trademark!": [["trademark", "AAAAAAAAAA", "cinderella", "pixar"],
         ["frozen", "aladdin", "little mermaid", "goofy"],
         ["donald duck", "snow white", "mulan", "moana"],
         ["jungle book", "pocahontas", "pinocchio", "General hux"],
         ["lion king", "dumbo", "jack sparrow", "buzz lightyear"]],
 
-        "Tradesecret!🪼": [["tradesecret", "dolphin", "shark", "octupus"],
+        "Tradesecret!": [["tradesecret", "AAAAAAAAAA", "shark", "octupus"],
         ["reef", "jellyfish", "seahorse", "whale"],
         ["squid", "seaweed", "starfish", "clam"],
         ["mantee", "lobster", "crab", "eel"],
@@ -116,8 +116,7 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
         let wordsFound = [];
 
         //generates a random theme 
-        var searchTypesArray = Object.keys(searchTypes); //converts theme object to array
-        // var randIndex = Math.floor(Math.random()*searchTypesArray.length); //generates random number/index
+        var searchTypesArray = Object.keys(searchTypes); 
 
         let wordSearchName;
         const urlParams = new URLSearchParams(window.location.search);
@@ -125,26 +124,26 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
 
         console.log(wordSearchType);
 
-        var randIndex = 0
+        var randomIndex = 0
         if (wordSearchType === "tradesecret") {
-            randIndex = 3
+            randomIndex = 3
         } else if (wordSearchType === "copyright") {
-            randIndex = 0
+            randomIndex = 0
         } else if (wordSearchType === "patent") {
-            randIndex = 1
+            randomIndex = 1
         } else if (wordSearchType === "trademark") {
-            randIndex = 2
+            randomIndex = 2
         } else {
-            randIndex = 0
+            randomIndex = 0
         }
 
-        var listOfWords = searchTypes[searchTypesArray[randIndex]]; //retrieves the matrix of words from random index
+        var listOfWords = searchTypes[searchTypesArray[randomIndex]]; //retrieves the matrix of words from random index
 
         //converts letters to uppercase
         convertToUpperCase(listOfWords);
 
         //sets the headings to reflect the instructions and themes
-        updateHeadings(searchTypesArray[randIndex]);
+        updateHeadings(searchTypesArray[randomIndex]);
 
         //runs the logic of the game using a close of the word list (to avoid the actual object being altered)
         game = new WordSearchLogic(gameId, listOfWords.slice());
