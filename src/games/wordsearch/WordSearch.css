@@ -1,23 +1,32 @@
+/*
+Created by Catherine Rodriquez
+*/
+
+
+/* makes all screens the same font */
 * {
     padding: 0;
     margin: 0;
     font-family: "Itim", cursive;
 }
 
+/* display for exit button */
 #return {
-    padding: 5px;
+    padding: 10px;
     text-align: left;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
     margin-left: 1%;
     margin-top: 1%;
+    background-color: rgb(38, 70, 158);
+    color: #fff;
 }
 
 h1,
 h3,
-h2,
+.info-h2,
 #wordTheme,
 #solveButton,
 #newGameButton,
@@ -29,6 +38,7 @@ h2,
 
 }
 
+/* used to display in the center the New Game button and Race the Clock button*/
 #gameOptions,
 #solve {
     display: flex;
@@ -37,7 +47,7 @@ h2,
 
 
 h1,
-h2,
+.info-h2,
 #wordTheme,
 #solveButton,
 #newGameButton,
@@ -49,7 +59,7 @@ h2,
 }
 
 h1,
-h2,
+.info-h2,
 .cell,
 #wordTheme,
 #wordlist {
@@ -58,11 +68,15 @@ h2,
 
 }
 
-h2 {
+.info-h2 {
     margin: 10px auto 10px auto;
     display: table
 }
 
+.navbar-h2{
+    font-size: 5dvh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
 
 h1 {
     font-size: 40px;
@@ -71,6 +85,214 @@ h1 {
     display: table;
 
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(38, 70, 158);
+    /* Set initial transparency */
+    border-bottom: 2px solid rgb(38, 70, 158);
+    padding: 0px 20px;
+    z-index: 999;
+    transition: background-color 0.4s, box-shadow 0.4s;
+    /* Smooth transition */
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  .navbar.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    /* Fully opaque on scroll */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+  }
+  /* Submenu styling */
+  .dropdown-submenu {
+    position: relative;
+  }
+  
+  .subdropbtn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 12px 16px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: rgb(38, 70, 158);
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .subdropbtn a:hover {
+    color: rgb(171, 171, 240);
+  }
+  
+  /* Submenu content hidden by default */
+  .submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Positions the submenu to open sideways */
+    top: 0;
+    background-color: white;
+    min-width: 280px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Show submenu content on hover */
+  .dropdown-submenu:hover .submenu-content {
+    display: block;
+  }
+  
+  /* Submenu links */
+  .submenu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of submenu links on hover */
+  .submenu-content a:hover {
+    background-color: #ddd;
+  }
+  
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    background: none;
+    margin-right: 20px;
+  }
+  
+  .dropbtn {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    /* Add space between buttons */
+  }
+  
+  
+  /* Dropdown button on hover & focus */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    /* Show the dropdown content on hover */
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {
+    display: block;
+  }
+  
+  
+  .navbar h2 {
+    padding: 10px;
+    padding-right: 20px;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .navbar h2 span {
+    font-style: italic;
+    font-size: 6dvh;
+    color: rgb(246, 246, 246);
+  }
+  
+  .navbar .home {
+    font-size: 1.5rem;
+    padding: 0 3.5rem;
+    margin-left: 180px;
+    color: #fff;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  .navbar a {
+    font-size: 1.2rem;
+    color: rgb(38, 70, 158);
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  .navbar a:hover {
+  
+    color: rgb(171, 171, 240);
+  }
+  
+  .navbar .dropbtn:hover {
+  
+    color: rgb(171, 171, 240);
+  }
+  
+  .navbar .btn1 {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(98, 122, 189);
+    margin-left: 200px;
+  }
+  
+  .navbar .btn:hover {
+    background: rgb(206, 206, 210);
+  }
+  
+  .navbar .btn1:hover {
+    background: rgb(206, 206, 210);
+  }
+  
+  .navbar .btn {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: rgb(98, 122, 189);
+  
+  }
 
 /* allows the hover effect on the buttons*/
 #newGameButton:hover,
@@ -82,9 +304,12 @@ h1 {
 
 /* background color of the page*/
 body {
-
-    background-color: #EAF7FB;
-
+    background-image: url(../../../images/bg-plane.png);
+    /* background-image: url(/images/homepage_TRADE\ MARK.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+    padding-top: 81px;
 }
 
 /* border around word search theme box*/
@@ -130,9 +355,13 @@ body {
     /*ensures text can't be accidentally selected*/
     cursor: default;
     user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
     -webkit-touch-callout: none;
-}
 
+}
 
 /* mouse color on table*/
 .cell:hover {
@@ -240,13 +469,16 @@ body {
 #Timer {
     border: 2px black solid;
     border-radius: 8px;
-    background-color: white;
+    background-color: rgb(38, 70, 158);
+    color: #fff;
     font-size: 18px;
     font-weight: bold;
     margin-right: 1em;
     margin-top: 1em;
+    margin-bottom: 1rem;
     padding: 5px;
     text-align: center;
+    justify-self: center;
 }
 
 /* New Game, Race the Clock, and Reveal Answers button info*/
@@ -254,7 +486,8 @@ body {
 #newGameButton,
 #challenge {
 
-    background-color: lightgrey;
+    background-color: rgb(38, 70, 158);
+    color: #fff;
     display: inline-block;
     margin-left: 1em;
     margin-right: 1em;
