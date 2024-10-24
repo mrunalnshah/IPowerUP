@@ -10,22 +10,36 @@
 
 <body>
   <div class="container">
-    <div class="navbar">
-      <img src="/images/patent_logo2.jpeg" class="logo" />
-      <nav>
-        <a href="../homepage/homepage.html" style="text-decoration: none">
-          <h2><span>IPowerUp</span></h2>
-        </a>
-        <ul>
-          <li><a href="../homepage/homepage.html">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-
-          <li><a href="#">Categories</a></li>
-        </ul>
-        <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
+    <header>
+      <nav class="navbar">
+        <h2><span>IPowerUp</span></h2>
+        <div class="nav-links">
+          <a href="homepage.html" class="home">Home</a>
+          <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+              <a href="../patent/patent.html">Patent</a>
+              <a href="../copyright/copyright.html">Copyright</a>
+              <a href="../trademark/trademark.html">Trademarks</a>
+              <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Games</button>
+            <div class="dropdown-content">
+              <a href="../games/quiz_trademark/tradesecret-quiz.html">Trademark Quiz</a>
+              <a href="../games/quiz/tradesecret-quiz.html">Trade Secret Quiz</a>
+              <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+              <a href="../games/crossword/patent-crossword.html">Crossword</a>
+              <a href="../games/wordsearch/Copyright-wordsearch.html">Wordsearch</a>
+            </div>
+          </div>
+          <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+          <a class="btn" href="../../index.html">Sign Out</a>
+        </div>
       </nav>
-      <img src="../../images/menu.png" class="menu-icon" />
-    </div>
+    </header>
+ 
     <div class="row">
       <div class="col col1">
         <h1 class="ip-title">Copyright</h1>
