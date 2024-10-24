@@ -23,7 +23,27 @@ let allInputs = document.querySelectorAll("input[type='radio']");
 
 let quizName;
 const urlParams = new URLSearchParams(window.location.search);
-const quizType = urlParams.get('type')?.toLowerCase();
+const wordSearchType = urlParams.get('type')?.toLowerCase();
+
+console.log(wordSearchType);
+
+var randomIndex = 0
+if (wordSearchType === "trademark") {
+  randomIndex = 0
+  document.getElementById("gameType").innerHTML = "Trademark";
+} else if (wordSearchType === "copyright") {
+  randomIndex = 1
+  document.getElementById("gameType").innerHTML = "Copyright";
+} else if (wordSearchType === "patent") {
+  randomIndex = 2
+  document.getElementById("gameType").innerHTML = "Patent";
+} else if (wordSearchType === "tradesecret") {
+  randomIndex = 3
+  document.getElementById("gameType").innerHTML = "Tradesecret";
+} else {
+  randomIndex = 0
+  document.getElementById("gameType").innerHTML = "Trademark";
+}
 let quizScoreType;;
 
 console.log(quizType);
