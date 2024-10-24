@@ -16,18 +16,75 @@
 </head>
 
 <body>
+  <header>
+    <nav class="navbar">
+        <h2 class="navbar-h2"><span>IPowerUp</span></h2>
+        <div class="nav-links">
+            <a href="homepage.html" class="home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Categories</button>
+                <div class="dropdown-content">
+                    <a href="../../patent/patent.html">Patent</a>
+                    <a href="../../copyright/copyright.html">Copyright</a>
+                    <a href="../../trademark/trademark.html">Trademarks</a>
+                    <a href="../../tradesecret/tradesecret.html">Trade Secrets</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Games</button>
+                <div class="dropdown-content">
+                    <div class="dropdown-submenu">
+                        <button class="subdropbtn">Quiz ▸</button>
+                        <div class="submenu-content">
+                            <a href="../quiz/quiz.html?type=trademark">Trademark Quiz</a>
+                            <a href="../quiz/quiz.html?type=copyright">Copyright Quiz</a>
+                            <a href="../quiz/quiz.html?type=tradesecret">Trade Secret Quiz</a>
+                            <a href="../quiz/quiz.html?type=patent">Patent Quiz</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <button class="subdropbtn">Wordsearch ▸</button>
+                        <div class="submenu-content">
+                            <a href="../wordsearch/WordSearch.html?type=trademark">Trademark Wordsearch</a>
+                            <a href="../wordsearch/WordSearch.html?type=copyright">Copyright Wordsearch</a>
+                            <a href="../wordsearch/WordSearch.html?type=tradesecret">Trade Secret Wordsearch</a>
+                            <a href="../wordsearch/WordSearch.html?type=patent">Patent Wordsearch</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <button class="subdropbtn">Crossword ▸</button>
+                        <div class="submenu-content">
+                            <a href="../crossword/crossword.html?type=trademark">Trademark Crossword</a>
+                            <a href="../crossword/crossword.html?type=copyright">Copyright Crossword</a>
+                            <a href="../crossword/crossword.html?type=tradesecret">Trade Secret Crossword</a>
+                            <a href="../crossword/crossword.html?type=patent">Patent Crossword</a>
+                        </div>
+                    </div>
+                    <a href="../logoquiz/logoGame.html">Guess the Logo</a>
+                </div>
+            </div>
+        </div>
+        <a class="btn1" href="../../scoreboard/scoreboard.html">Leaderboard</a>
+        <a class="btn" href="../../../index.html">Sign Out</a>
+        </div>
+    </nav>
+</header>
+  <div class="game-content">
   <div id="puzzle-wrapper">
     <h1 class="c">CROSSWORD</h1>
     <h2 id="gameType">Which?</h2>
     <!-- crossword puzzle appended here -->
   </div>
-  <div id="game">
-    <div id="score-finish-container">
-      <div id="total-solved">
-        Total Solved: <span id="solved-count">0</span>
-      </div>
-      <div class="finish-button-container">
-        <button class="b" onclick="returnToMain()"> Finish </button>
+  </div>
+  <div class="stats">
+    <div id="game">
+      <div id="score-finish-container">
+        <div id="total-solved">
+          Total Solved: <span id="solved-count">0</span>
+        </div>
+        <div class="finish-button-container">
+          <button class="b" onclick="returnToMain()"> Finish </button>
+        </div>
       </div>
     </div>
   </div>
