@@ -10,36 +10,21 @@
 
 <body>
   <div class="container">
-    <header>
-      <nav class="navbar">
-        <h2><span>IPowerUp</span></h2>
-        <div class="nav-links">
-          <a href="homepage.html" class="home">Home</a>
-          <div class="dropdown">
-            <button class="dropbtn">Categories</button>
-            <div class="dropdown-content">
-              <a href="../patent/patent.html">Patent</a>
-              <a href="../copyright/copyright.html">Copyright</a>
-              <a href="../trademark/trademark.html">Trademarks</a>
-              <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn">Games</button>
-            <div class="dropdown-content">
-              <a href="../games/quiz_trademark/tradesecret-quiz.html">Trademark Quiz</a>
-              <a href="../games/quiz/tradesecret-quiz.html">Trade Secret Quiz</a>
-              <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
-              <a href="../games/crossword/patent-crossword.html">Crossword</a>
-              <a href="../games/wordsearch/Copyright-wordsearch.html">Wordsearch</a>
-            </div>
-          </div>
-          <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
-          <a class="btn" href="../../index.html">Sign Out</a>
-        </div>
+    <div class="navbar">
+      <img src="/images/patent_logo2.jpeg" class="logo" />
+      <nav>
+        <a href="../homepage/homepage.html" style="text-decoration: none">
+          <h2><span>IPowerUp</span></h2>
+        </a>
+        <ul>
+          <li><a href="../homepage/homepage.html">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">Categories</a></li>
+        </ul>
+        <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
       </nav>
-    </header>
- 
+      <img src="../../images/menu.png" class="menu-icon" />
+    </div>
     <div class="row">
       <div class="col col1">
         <h1 class="ip-title">Copyright</h1>
@@ -67,12 +52,29 @@
           speech, discoveries, musical scores, or ideas have to be written
           down in physical form in order to be protected by copyright.
         </p>
-        <a href="../games/wordsearch/Copyright-wordsearch.html">
+        <a href="../games/wordsearch/WordSearch.html?type=copyright">
           <button type="button">WordSearch</button>
         </a>
+        <div class="button-group">
+
+          <a href="../games/quiz/quiz.html?type=copyright">
+            <button type="button">Copyright Quiz</button>
+          </a>
+          <button type="button">Learn More</button>
+        </div>
       </div>
       <div class="col">
+
+        <div class="sliding-facts">
+          <span class="nav-arrow" id="prev">&lt;</span>
+          <p id="fact">Fact 1: Copyright lasts the author's lifetime plus 70 years.</p>
+          <span class="nav-arrow" id="next">&gt;</span>
+        </div>
+
+
         <div class="card">
+
+
           <iframe width="560" height="315" src="https://www.youtube.com/embed/eEB5MYcj-Ns?si=qOE8pxjuFLRJFeyq"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -80,7 +82,11 @@
         </div>
       </div>
     </div>
+
   </div>
+  </div>
+
+  <script src="copyright.js"></script>
 </body>
 
 </html>

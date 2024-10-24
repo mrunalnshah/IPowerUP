@@ -84,3 +84,11 @@ img {
     bottom: 10%;
     right: 45%;
 }
+
+.loading {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin-top: 20px;
+}

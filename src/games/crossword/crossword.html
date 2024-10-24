@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Qurossword - A javascript crossword puzzle plugin</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="crossword.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="crossword.js"></script>
+  <script src="data.js"></script>
+  <script type="module" src="firebase.js"></script>
+
+</head>
+
+<body>
+  <div id="puzzle-wrapper">
+    <h1 class="c">CROSSWORD</h1>
+    <h2 id="gameType">Which?</h2>
+    <!-- crossword puzzle appended here -->
+  </div>
+  <div id="game">
+    <div id="score-finish-container">
+      <div id="total-solved">
+        Total Solved: <span id="solved-count">0</span>
+      </div>
+      <div class="finish-button-container">
+        <button class="b" onclick="returnToMain()"> Finish </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function returnToMain() {
+      let mySolved = parseInt(localStorage.getItem("crosswordScore"));
+      let userEmail = localStorage.getItem("email");
+      let gameType = localStorage.getItem("crosswordType") || 0;
+      console.log(mySolved);
+
+      updateUserScore(userEmail, mySolved, gameType).then(() => {
+        localStorage.setItem("crosswordScore", 0);
+        localStorage.setItem("crosswordType", 0);
+        window.location.href = "../../homepage/homepage.html";
+      }).catch((error) => {
+        console.error("Error updating score:", error);
+      });
+    }
+  </script>
+</body>
+
+</html>

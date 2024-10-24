@@ -47,11 +47,7 @@ document.querySelector('.form.sign-up button').addEventListener('click', (event)
             userId: user.uid,
             username: username,
             email: email,
-            crossword: 0,
-            logoquiz: 0,
-            quiz_tradesecret: 0,
-            quiz_trademark: 0,
-            wordsearch: 0,
+            totalScore: 0,
         })
         .then(() => {
             console.log("User data added to Firestore");
