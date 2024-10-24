@@ -30,7 +30,7 @@ async function fetchLeaderboard(game, tableBodyId) {
 
 function populateLeaderboard(players, tableBodyId) {
     const tableBody = document.getElementById(tableBodyId);
-    tableBody.innerHTML = ''; 
+    tableBody.innerHTML = '';
 
     players.forEach((player, index) => {
         const row = document.createElement("tr");
@@ -45,6 +45,15 @@ function populateLeaderboard(players, tableBodyId) {
 
 fetchLeaderboard('totalScore', 'overall');
 fetchLeaderboard('logoquiz', 'logo-trademark');
-fetchLeaderboard('quiz', 'quiz');
-fetchLeaderboard('wordsearch', 'wordsearch');
-fetchLeaderboard('crossword', 'crossword');
+fetchLeaderboard('quizScoreCopyright', 'quizCopyright');
+fetchLeaderboard('quizScorePatent', 'quizPatent');
+fetchLeaderboard('quizScoreTrademark', 'quizTrademark');
+fetchLeaderboard('quizScoreTradesecret', 'quizTradesecret');
+fetchLeaderboard('wordsearchScoreCopyright', 'wordsearchCopyright');
+fetchLeaderboard('wordsearchScorePatent', 'wordsearchPatent');
+fetchLeaderboard('wordsearchScoreTrademark', 'wordsearchTrademark');
+fetchLeaderboard('wordsearchScoreTradesecret', 'wordsearchTradesecret');
+fetchLeaderboard('crosswordScoreCopyright', 'crosswordCopyright');
+fetchLeaderboard('crosswordScorePatent', 'crosswordPatent');
+fetchLeaderboard('crosswordScoreTrademark', 'crosswordTrademark');
+fetchLeaderboard('crosswordScoreTradesecret', 'crosswordTradesecret');
