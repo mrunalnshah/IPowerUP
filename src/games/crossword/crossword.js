@@ -147,10 +147,10 @@
 
           $("#" + puzz.data[i].orientation).append(
             '<li tabindex="1" data-position="' +
-              i +
-              '">' +
-              puzz.data[i].clue +
-              "</li>"
+            i +
+            '">' +
+            puzz.data[i].clue +
+            "</li>"
           );
         }
 
@@ -201,9 +201,9 @@
               $(light)
                 .addClass(
                   "entry-" +
-                    (hasOffset ? x - positionOffset : x) +
-                    " position-" +
-                    (x - 1)
+                  (hasOffset ? x - positionOffset : x) +
+                  " position-" +
+                  (x - 1)
                 )
                 .append(
                   '<input maxlength="1" val="" type="text" tabindex="-1" />'
@@ -242,16 +242,17 @@
           .join("");
 
         if (valToCheck === currVal) {
-          $(".active").addClass("done").removeClass("active");
+          if (!solved.includes(valToCheck)) {
+            $(".active").addClass("done").removeClass("active");
+            $(".clues-active").addClass("clue-done");
 
-          $(".clues-active").addClass("clue-done");
+            solved.push(valToCheck);
+            solvedToggle = true;
 
-          solved.push(valToCheck);
-          solvedToggle = true;
-
-          totalSolved++; 
-          localStorage.setItem("crosswordScore", totalSolved);
-          $("#solved-count").text(totalSolved);
+            totalSolved++;
+            localStorage.setItem("crosswordScore", totalSolved);
+            $("#solved-count").text(totalSolved);
+          }
 
           return;
         }
