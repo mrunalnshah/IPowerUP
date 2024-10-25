@@ -10,83 +10,89 @@
 
 <body>
   <div class="container">
-    <div class="navbar">
-      <img src="/images/patent_logo2.jpeg" class="logo" />
-      <nav>
-        <a href="../homepage/homepage.html" style="text-decoration: none">
-          <h2><span>IPowerUp</span></h2>
-        </a>
-        <ul>
-          <li><a href="../homepage/homepage.html">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">Categories</a></li>
-        </ul>
-        <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
+    <header>
+      <nav class="navbar">
+        <h2><span>IPowerUp</span></h2>
+        <div class="nav-links">
+          <a href="homepage.html" class="home">Home</a>
+          <div class="dropdown">
+            <a class="dropbtn">Categories</a>
+            <div class="dropdown-content">
+              <a href="../patent/patent.html">Patent</a>
+              <a href="../copyright/copyright.html">Copyright</a>
+              <a href="../trademark/trademark.html">Trademarks</a>
+              <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn">Games</a>
+            <div class="dropdown-content">
+              <div class="dropdown-submenu">
+                <a class="subdropbtn">Quiz ▸</a>
+                <div class="submenu-content">
+                  <a href="../games/quiz/quiz.html?type=trademark">Trademark Quiz</a>
+                  <a href="../games/quiz/quiz.html?type=copyright">Copyright Quiz</a>
+                  <a href="../games/quiz/quiz.html?type=tradesecret">Trade Secret Quiz</a>
+                  <a href="../games/quiz/quiz.html?type=patent">Patent Quiz</a>
+                </div>
+              </div>
+              <div class="dropdown-submenu">
+                <a class="subdropbtn">Wordsearch ▸</a>
+                <div class="submenu-content">
+                  <a href="../games/wordsearch/WordSearch.html?type=trademark">Trademark Wordsearch</a>
+                  <a href="../games/wordsearch/WordSearch.html?type=copyright">Copyright Wordsearch</a>
+                  <a href="../games/wordsearch/WordSearch.html?type=tradesecret">Trade Secret Wordsearch</a>
+                  <a href="../games/wordsearch/WordSearch.html?type=patent">Patent Wordsearch</a>
+                </div>
+              </div>
+              <div class="dropdown-submenu">
+                <a class="subdropbtn">Crossword ▸</a>
+                <div class="submenu-content">
+                  <a href="../games/crossword/crossword.html?type=trademark">Trademark Crossword</a>
+                  <a href="../games/crossword/crossword.html?type=copyright">Copyright Crossword</a>
+                  <a href="../games/crossword/crossword.html?type=tradesecret">Trade Secret Crossword</a>
+                  <a href="../games/crossword/crossword.html?type=patent">Patent Crossword</a>
+                </div>
+              </div>
+              <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+            </div>
+          </div>
+          <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+          <a class="btn" href="../../index.html">Sign Out</a>
+        </div>
       </nav>
-      <img src="../../images/menu.png" class="menu-icon" />
-    </div>
+    </header>
     <div class="row">
-      <div class="col col1">
-        <h1 class="ip-title">Copyright</h1>
-        <p class="ip-desc">
-          Copyright refers to the legal right of the owner of intellectual
-          property. In simpler terms, copyright is the right to copy. This
-          means that the original creators of products and anyone they give
-          authorization to are the only ones with the exclusive right to
-          reproduce the work. Copyright law gives creators of original
-          material the exclusive right to further use and duplicate that
-          material for a given amount of time. Once a copyright expires, the
-          copyrighted item becomes public domain.
-        </p>
-        &nbsp;
-        <p class="ip-desc">
-          One safeguard that can be used to legally protect an original
-          creation is copyright. Under copyright law, a work is considered
-          original if the author created it from independent thinking void of
-          duplication. This type of work is known as an Original Work of
-          Authorship (OWA).Not all types of work can be copyrighted. A
-          copyright does not protect ideas, discoveries, concepts, or
-          theories. Brand names, logos, slogans, domain names, and titles also
-          cannot be protected under copyright law. For an original work to be
-          copyrighted, it has to be in tangible form.This means that any
-          speech, discoveries, musical scores, or ideas have to be written
-          down in physical form in order to be protected by copyright.
-        </p>
-        <a href="../games/wordsearch/WordSearch.html?type=copyright">
-          <button type="button">WordSearch</button>
-        </a>
-        <div class="button-group">
-
-          <a href="../games/quiz/quiz.html?type=copyright">
-            <button type="button">Copyright Quiz</button>
-          </a>
-          <button type="button">Learn More</button>
-        </div>
-      </div>
-      <div class="col">
-
-        <div class="sliding-facts">
-          <span class="nav-arrow" id="prev">&lt;</span>
-          <p id="fact">Fact 1: Copyright lasts the author's lifetime plus 70 years.</p>
-          <span class="nav-arrow" id="next">&gt;</span>
-        </div>
-
-
-        <div class="card">
-
-
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/eEB5MYcj-Ns?si=qOE8pxjuFLRJFeyq"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+      <div class="blur">
+        <div class="col col1">
+          <h1 class="ip-title"><span>Copyright</span></h1>
+          <div class="sliding-facts">
+            <span class="nav-arrow" id="prev">&lt;</span>
+            <p id="facts" class="ip-desc">
+              Copyright is a legal right that grants creators exclusive rights to reproduce, use, and duplicate their
+              original work for a set period. This protection applies to works created independently and in tangible
+              form, known as Original Works of Authorship (OWA). However, copyright does not cover ideas, concepts,
+              theories, or certain items like brand names and logos. Once a copyright expires, the work enters the
+              public domain.
+            </p>
+            <span class="nav-arrow" id="next">&gt;</span>
+          </div>
+          <div class="card">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eEB5MYcj-Ns?si=qOE8pxjuFLRJFeyq"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="button-container">
+            <button type="button"><a href="../games/wordsearch/WordSearch.html?type=copyright">WordSearch</a></button>
+            <button type="button"><a href="../games/wordsearch/crossword.html?type=copyright">Crossword</a></button>
+            <button type="button"><a href="../games/quiz/quiz.html?type=copyright">Quiz</a></button>
+          </div>
         </div>
       </div>
     </div>
-
+    <script src="copyright.js"></script>
   </div>
-  </div>
-
-  <script src="copyright.js"></script>
 </body>
 
 </html>
