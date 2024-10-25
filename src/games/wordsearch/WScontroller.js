@@ -19,30 +19,31 @@ function WordSearchController(gameId, listId, solveId, newGameId, themeId, chall
     //an object containing various themes/words for the game
     var searchTypes = {
 
-        "Copyright!": [["Copyright", "AAAAAAAAAA", "algorithm", "highscore"],
-        ["donkey kong", "quarter", "scoreboard", "space invaders"],
-        ["tron", "gameover", "leaderboard", "galaga"],
-        ["defender", "powerup", "sprite", "frogger"],
-        ["joystick", "asteriods", "pacman", "centipede"]],
+        "Copyright!": [["copyright", "infringement", "license", "royalties"],
+        ["plagiarism", "fair use", "public domain", "creative commons"],
+        ["originality", "derivative work", "author", "moral rights"],
+        ["digital rights", "artistic work", "music", "film"],
+        ["adaptation", "distribution", "reproduction", "synchronization"]],
 
-        "Patent!": [["patent", "AAAAAAAAAA", "brazil", "germany"],
-        ["france", "italy", "united kingdom", "australia"],
-        ["south korea", "mexico", "argentina", "spain"],
-        ["japan", "china", "india", "russia"],
-        ["south africa", "egypt", "turkey", "saudi arabia"]],
+        "Patent!": [["patent", "invention", "novelty", "utility"],
+        ["prior art", "claims", "examination", "filing"],
+        ["patentability", "infringement", "licensing", "prosecution"],
+        ["patent attorney", "industrial design", "technical solution", "patent office"],
+        ["application", "grant", "assignee", "patent troll"]],
 
-        "Trademark!": [["trademark", "AAAAAAAAAA", "cinderella", "pixar"],
-        ["frozen", "aladdin", "little mermaid", "goofy"],
-        ["donald duck", "snow white", "mulan", "moana"],
-        ["jungle book", "pocahontas", "pinocchio", "General hux"],
-        ["lion king", "dumbo", "jack sparrow", "buzz lightyear"]],
+        "Trademark!": [["trademark", "brand", "logo", "service mark"],
+        ["distinctiveness", "registration", "infringement", "trade dress"],
+        ["consumer confusion", "slogan", "use in commerce", "mark"],
+        ["fair use", "dilution", "abandonment", "renewal"],
+        ["licensing", "counterfeit", "cease and desist", "trademark search"]],
 
-        "Tradesecret!": [["tradesecret", "AAAAAAAAAA", "shark", "octupus"],
-        ["reef", "jellyfish", "seahorse", "whale"],
-        ["squid", "seaweed", "starfish", "clam"],
-        ["mantee", "lobster", "crab", "eel"],
-        ["manta ray", "algae", "tide", "sea turtle"]],
+        "Trade Secret!": [["trade secret", "confidentiality", "NDAs", "proprietary"],
+        ["information", "business strategy", "formulas", "recipes"],
+        ["customer lists", "manufacturing processes", "marketing plans", "financial data"],
+        ["misappropriation", "employee agreements", "information security", "intellectual property"],
+        ["non-compete", "disclosure", "security measures", "competitive advantage"]],
     };
+
 
     //variables to store game logic, it's view, and AI logic
     var game;
