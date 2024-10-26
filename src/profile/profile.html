@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Profile Page - Ultimate Edition</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h2><span>IPowerUp</span></h2>
+            <div class="nav-links">
+                <a href="../homepage/homepage.html" class="home">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Categories</button>
+                    <div class="dropdown-content">
+                        <a href="../patent/patent.html">Patent</a>
+                        <a href="../copyright/copyright.html">Copyright</a>
+                        <a href="../trademark/trademark.html">Trademarks</a>
+                        <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Games</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-submenu">
+                            <button class="subdropbtn">Quiz ▸</button>
+                            <div class="submenu-content">
+                                <a href="../games/quiz/quiz.html?type=trademark">Trademark Quiz</a>
+                                <a href="../games/quiz/quiz.html?type=copyright">Copyright Quiz</a>
+                                <a href="../games/quiz/quiz.html?type=tradesecret">Trade Secret Quiz</a>
+                                <a href="../games/quiz/quiz.html?type=patent">Patent Quiz</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <button class="subdropbtn">Wordsearch ▸</button>
+                            <div class="submenu-content">
+                                <a href="../games/wordsearch/WordSearch.html?type=trademark">Trademark Wordsearch</a>
+                                <a href="../games/wordsearch/WordSearch.html?type=copyright">Copyright Wordsearch</a>
+                                <a href="../games/wordsearch/WordSearch.html?type=tradesecret">Trade Secret
+                                    Wordsearch</a>
+                                <a href="../games/wordsearch/WordSearch.html?type=patent">Patent Wordsearch</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <button class="subdropbtn">Crossword ▸</button>
+                            <div class="submenu-content">
+                                <a href="../games/crossword/crossword.html?type=trademark">Trademark Crossword</a>
+                                <a href="../games/crossword/crossword.html?type=copyright">Copyright Crossword</a>
+                                <a href="../games/crossword/crossword.html?type=tradesecret">Trade Secret Crossword</a>
+                                <a href="../games/crossword/crossword.html?type=patent">Patent Crossword</a>
+                            </div>
+                        </div>
+                        <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+                    </div>
+                </div>
+                <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+                <a class="btn" href="../../index.html">Sign Out</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="profile-header">
+            <img class="avatar" src="../../images/Avatar.png" alt="Avatar of Username" aria-label="User Avatar">
+            <div class="user-details">
+                <h1 class="user-name" id="username">Username</h1>
+                <p class="user-email" id="email">example@example.com</p>
+            </div>
+        </div>
+
+
+        <section class="user-progress">
+            <h2>User Progress</h2>
+            <div class="progress-details">
+                <div class="progress-item">
+                    <strong>High Score: </strong> <span class="user-highscore" id="totalScore">0</span>
+                </div>
+                <div class="four-ipGames-Score">
+                    <div class="score-box">
+                        <strong>Trademarks Score:</strong> <span class="Trademark-score"
+                            id="totalTrademarkScore">0</span>
+                        <div class="sub-scores">
+                            <div class="sub-score-box">Trademark quiz: <span id="trademarkQuiz">0</span></div>
+                            <div class="sub-score-box">Trademark Crossword: <span id="trademarkCrossword">0</span></div>
+                            <div class="sub-score-box">Trademark Wordsearch: <span id="trademarkWordsearch">0</span>
+                            </div>
+                            <div class="sub-score-box">Guess The Logo: <span id="trademarkGuessTheLogo">0</span></div>
+                        </div>
+                    </div>
+                    <div class="score-box">
+                        <strong>Patent Score:</strong> <span class="Patent-score" id="totalPatentScore">0</span>
+                        <div class="sub-scores">
+                            <div class="sub-score-box">Patent Quiz : <span id="patentQuiz"> 0 </span></div>
+                            <div class="sub-score-box">Patent Crossword : <span id="patentCrossword"> 0 </span></div>
+                            <div class="sub-score-box">Patent Wordsearch: <span id="patentWordsearch">0</span></div>
+                        </div>
+                    </div>
+                    <div class="score-box">
+                        <strong>Trade Secret Score:</strong> <span class="Tradesceret-score"
+                            id="totalTradesecretScore">0</span>
+                        <div class="sub-scores">
+                            <div class="sub-score-box">Trade-Secret Quiz : <span id="tradesecretQuiz"> 0 </span></div>
+                            <div class="sub-score-box">Trade-Secret Crossword : <span id="tradesecretCrossword"> 0
+                                </span></div>
+                            <div class="sub-score-box">Tradesecret Wordsearch : <span id="tradesecretWordsearch"> 0
+                                </span></div>
+                        </div>
+                    </div>
+                    <div class="score-box">
+                        <strong>Copyright Score:</strong> <span class="Copyright-score"
+                            id="totalCopyrightScore">0</span>
+                        <div class="sub-scores">
+                            <div class="sub-score-box">Copyright Quiz : <span id="copyrightQuiz"> 0 </span></div>
+                            <div class="sub-score-box">Copyright Crossword : <span id="copyrightCrossword"> 0 </span>
+                            </div>
+                            <div class="sub-score-box">Copyright Wordsearch : <span id="copyrightWordsearch"> 0 </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script type="module" src="profile.js"></script>
+</body>
+
+</html>

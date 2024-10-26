@@ -1,0 +1,414 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url(../../images/homepage_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background to highlight content */
+    padding: 100px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    /* Softer shadow */
+    max-width: 850px;
+    width: 100%;
+    height: 107%;
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(38, 70, 158);
+    border-bottom: 2px solid rgb(38, 70, 158);
+    padding: 0px 20px;
+    z-index: 10;
+    transition: background-color 0.4s, box-shadow 0.4s;
+    /* Smooth transition */
+    margin: 0px;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    /* Fully opaque on scroll */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+}
+
+/* Submenu styling */
+.dropdown-submenu {
+    position: relative;
+}
+
+.subdropbtn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 12px 16px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: rgb(38, 70, 158);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    /* Smooth color transition */
+}
+
+.subdropbtn:hover {
+    color: rgb(171, 171, 240);
+    /* Changed from a link style to a hover state */
+}
+
+/* Submenu content hidden by default */
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    /* Positions the submenu to open sideways */
+    top: 0;
+    background-color: white;
+    min-width: 280px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Show submenu content on hover */
+.dropdown-submenu:hover .submenu-content {
+    display: block;
+}
+
+/* Submenu links */
+.submenu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of submenu links on hover */
+.submenu-content a:hover {
+    background-color: #ddd;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.dropbtn {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+    /* Smooth color transition */
+}
+
+/* Dropdown button on hover & focus */
+.dropdown:hover .dropdown-content {
+    display: block;
+    /* Show the dropdown content on hover */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu */
+.show {
+    display: block;
+}
+
+.navbar h2 {
+    padding: 10px;
+    padding-right: 20px;
+    cursor: pointer;
+    color: #000;
+}
+
+.navbar h2 span {
+    font-style: italic;
+    font-size: 6dvh;
+    /* Keep it consistent */
+    color: rgb(246, 246, 246);
+}
+
+.navbar .home {
+    font-size: 1.5rem;
+    padding: 0 3.5rem;
+    margin-left: 180px;
+    color: #fff;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    color: rgb(38, 70, 158);
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s;
+    /* Smooth color transition */
+}
+
+.navbar a:hover {
+    color: rgb(171, 171, 240);
+}
+
+.navbar .dropbtn:hover {
+    color: rgb(171, 171, 240);
+}
+
+.navbar .btn1 {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(98, 122, 189);
+    margin-left: 200px;
+    transition: background-color 0.3s;
+    /* Smooth background transition */
+}
+
+.navbar .btn:hover {
+    background: rgb(206, 206, 210);
+}
+
+.navbar .btn1:hover {
+    background: rgb(206, 206, 210);
+}
+
+.navbar .btn {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(98, 122, 189);
+    transition: background-color 0.3s;
+    /* Smooth background transition */
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid #4e78ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(78, 120, 255, 0.4);
+    /* Slightly softer glowing shadow */
+}
+
+.user-details {
+    margin-left: 30px;
+    text-align: left;
+}
+
+.user-name {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2e3b4e;
+    letter-spacing: 1px;
+}
+
+.user-email {
+    font-size: 1.2em;
+    color: #7a869a;
+    margin-top: 5px;
+}
+
+/* Button for Editing Profile */
+.edit-profile-btn {
+    margin-top: 20px;
+    /* Maintain spacing above */
+    padding: 12px 30px;
+    /* Adjust padding as needed */
+    border: none;
+    background-color: #4e78ff;
+    /* Original color */
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(78, 120, 255, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    /* Ensure button behaves like a block element */
+    align-self: flex-start;
+    /* Align to the start of the flex container */
+}
+
+.edit-profile-btn:hover {
+    background-color: #ff5722;
+    /* Orange on hover */
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3);
+}
+
+/* User Progress Section */
+.user-progress {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.user-progress h2 {
+    font-size: 1.8em;
+    color: #4e78ff;
+    margin-bottom: 25px;
+}
+
+/* Progress Details */
+.progress-details {
+    text-align: left;
+    padding: 10px;
+}
+
+.progress-item {
+    margin: 20px 0;
+    font-size: 1.3em;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.four-ipGames-Score {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows items to wrap into new rows */
+    justify-content: space-between;
+    /* Distribute space between the boxes */
+    gap: 20px;
+    /* Gap between the boxes */
+}
+
+.score-box {
+    flex: 1 1 calc(50% - 20px);
+    /* Two boxes per row with gap */
+    background-color: #f0f0f0;
+    /* Light background for score boxes */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 15px;
+    /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for depth */
+    text-align: center;
+    /* Center the text inside the boxes */
+    transition: transform 0.3s;
+    /* Animation for hover effect */
+}
+
+.score-box:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+}
+
+.user-highscore,
+.Trademark-score,
+.Patent-score,
+.Tradesceret-score,
+.Copyright-score {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-details {
+        margin-left: 0;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .user-name {
+        font-size: 2em;
+    }
+
+    .user-email {
+        font-size: 1.1em;
+    }
+
+    .progress-item {
+        font-size: 1.2em;
+    }
+
+}
