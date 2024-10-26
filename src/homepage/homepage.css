@@ -149,7 +149,10 @@ section {
   font-weight: bold;
   /* Add space between buttons */
 }
+.navbar .dropbtn:hover {
 
+  color: rgb(171, 171, 240);
+}
 
 /* Dropdown button on hover & focus */
 .dropdown:hover .dropdown-content {
@@ -181,6 +184,10 @@ section {
   background-color: #ddd;
 }
 
+.dropdown-content .dropdown-submenu a:hover{
+  color: rgb(38, 70, 158);
+}
+
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: block;
@@ -203,11 +210,8 @@ section {
 .navbar .home {
   font-size: 1.5rem;
   padding: 0 3.5rem;
-  margin-left: 180px;
   color: #fff;
   font-weight: bold;
-  align-items: center;
-  text-decoration: none;
 }
 
 .navbar a {
@@ -223,10 +227,7 @@ section {
   color: rgb(171, 171, 240);
 }
 
-.navbar .dropbtn:hover {
 
-  color: rgb(171, 171, 240);
-}
 
 .navbar .btn1 {
   color: white;
@@ -239,9 +240,6 @@ section {
   margin-left: 200px;
 }
 
-.navbar .btn:hover {
-  background: rgb(206, 206, 210);
-}
 
 .navbar .btn1:hover {
   background: rgb(206, 206, 210);
@@ -257,7 +255,9 @@ section {
   background-color: rgb(98, 122, 189);
 
 }
-
+.navbar .btn:hover {
+  background: rgb(206, 206, 210);
+}
 .row {
   display: flex;
   align-items: center;
