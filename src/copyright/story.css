@@ -1,78 +1,153 @@
 * {
-    padding: 0;
-    margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    transition: .2s linear;
-    scroll-behavior: smooth;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
-    overflow: visible;
-  }
-  
-  section {
-    padding: 2rem 9%;
-  }
-  
-  .body{
-    height: 100vh;
-  }
-  /* Container Styles */
-  .container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../images/homepage_bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left: 30%;
-    padding-right: 8%;
-    border-radius: 20px;
-    border-color: #000;
-    box-sizing: border-box;
-  }
-  
-  .blur {
-    background-color: rgba(192, 225, 242, 0.8);
-    /* Semi-transparent white */
-    padding: 150px;
-    border-radius: 10px;
-    backdrop-filter: blur(-10%);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(70px);
-    height: 230px;
-    width: 150%;
-    margin-top: 8%;
-    transform: translateX(-40px);
-  }
-  
-  /* Card Styles */
-  .video{
-    
-   
-    /* padding-top: 50px; */
-    padding-left: 200px;
-    padding-right: 90%;
-    padding-bottom: -0px;
-    padding-top: 8%;
+  padding: 0;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transition: .2s linear;
+  scroll-behavior: smooth;
+}
 
-  }
-  
-  
-  /* Navigation Arrow Styles */
-  
-  .nav-arrow {
-    cursor: pointer;
-    font-size: 2rem;
-    color: #16163b;
-    user-select: none;
-    transition: color 0.3s;
-    transform: translateX(-150px);
-  }
-  
-  .nav-arrow:hover {
-    color: #77bdd9;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow: visible;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.body{
+  height: 100vh;
+}
+/* Container Styles */
+.container {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+width: 100%;
+height: 100vh;
+background-image: url(../../images/homepage_bg.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+/* Blurred overlay behind the video */
+.blur-overlay {
+position: absolute;
+width: 60%; /* Controls the width of the blurred area */
+height: 100%; /* Controls the height of the blurred area */
+background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent for better blending */
+backdrop-filter: blur(10px); /* Controls the blur intensity */
+border-radius: 15px; /* Matches the video’s rounded corners, if any */
+z-index: 1;
+}
+
+/* Video Styling */
+.container video {
+position: relative;
+z-index: 2; /* Ensures video stays above the blurred overlay */
+max-width: 900px;
+width: 100%;
+height: auto;
+border-radius: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+object-fit: contain;
+}
+
+/* Video Styling */
+.video {
+position: relative;
+max-width: 900px;
+width: 100%;
+height: auto;
+border-radius: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+object-fit: contain;
+z-index: 2; /* Ensures video stays above the blurred background */
+}
+
+.blur {
+  background-color: rgba(192, 225, 242, 0.8);
+  padding: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(70px);
+  width: 100%;
+  max-width: 600px; 
+  margin-top: 8%;
+  text-align: center;
+}
+
+/* Navigation Arrow Styles */
+
+.nav-arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #16163b;
+  user-select: none;
+  transition: color 0.3s;
+  transform: translateX(-150px);
+}
+
+.nav-arrow:hover {
+  color: #77bdd9;
+}
+
+/* General Button Styling */
+button {
+color: #ffffff;
+font-size: 18px;
+padding: 12px;
+transition: transform 0.5s;
+border: 0;
+border-radius: 10px;
+outline: none;
+cursor: pointer;
+background-color: rgb(130, 154, 218);
+;
+}
+
+button:hover {
+transform: scale(1.1); /* Adds a slight hover effect */
+}
+
+/* Styling for Previous Button */
+.previous {
+color: #ffffff;
+font-size: 20px;          /* Slightly smaller font if necessary */
+padding: 6px 10px;        /* Adjust padding to fit the smaller dimensions */
+width: 120px;              /* Flexible width to fit content */
+height: 40px;             /* Flexible height to fit content */
+border-radius: 5px;       /* Custom border radius for this button */
+border: 1px solid blue;  /* Border color */
+background-color: rgb(38, 70, 158); /* Darker background for distinction */
+display: flex;            /* Flex display to center content */
+align-items: center;      /* Center content vertically */
+justify-content: center;  /* Center content horizontally */
+}
+
+.previous a{
+  text-decoration: none;
+  color: white;       
+}
+
+.button-container{
+position: re;
+justify-content: center;
+margin-top: 1.5%;
+z-index: 2;
+}
+.previous:hover {
+transform: scale(1.05);      /* Subtle hover effect */
+background-color: #3a4b7c;  /* Slightly different color on hover */
+}
+
+.video-cont{
+  margin-top: 5%;
+}
