@@ -9,7 +9,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("../../../images/bg-plane.png");
+    background-image: url("2.jpg");
     background-blend-mode: darken;
     background-size: cover;
     background-repeat: no-repeat;
@@ -59,30 +59,52 @@ img {
     margin-left: 10px;
 }
 
-
+/* Submit Button */
 #submit {
     width: 100%;
-    background-color: black;
+    background-color: #26469E; /* Deep Indigo (matches the theme's blue) */
     transition: 0.5s;
-    color: white;
+    color: #FFFFFF; /* White text for contrast */
     outline: none;
     border: none;
     font-size: 25px;
     display: block;
     padding: 10px;
     cursor: pointer;
+    border-radius: 10px; /* Smooth and rounded for a modern look */
 }
 
 #submit:hover {
-    background-color: rgb(34, 6, 53);
+    background-color: #4B6584; /* Muted teal/blue for a sophisticated hover effect */
 }
 
+/* Exit Button */
 .b {
     position: absolute;
     width: 10%;
-    height: 5%;
+    height: 7%;
     bottom: 10%;
     right: 45%;
+    background-color: #26469E; /* Deep Indigo (same as Submit) */
+    border: none;
+    color: #FFFFFF; /* White text for clarity */
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.b:hover {
+    background-color: #4B6584; /* Muted teal/blue for hover consistency */
+}
+
+.b h1 {
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #FFFFFF; /* White text to ensure readability */
 }
 
 .loading {
