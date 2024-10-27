@@ -84,7 +84,7 @@ h1 {
   text-align: left;
   /* Left align the title */
   left: 7%;
-  top: 15%;
+  top: 13%;
   transform: translateX(-1px);
   
 }
@@ -140,7 +140,7 @@ h1 {
 
 .sliding-facts p {
   margin-right:100px;
-  line-height: 34px;
+  line-height: 40px;
   font-size: 1.8rem;
   color: #151f6f;
   text-align: justify;
