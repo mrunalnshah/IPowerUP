@@ -2,83 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="trademark.css" rel="stylesheet">
-    <title>Trademark</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="trademark.css" rel="stylesheet" />
+  <link href="/src/navbar/navbar-style.css" rel="stylesheet" />
+  <title>Copyright</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-            <header>
-                <nav class="navbar">
-                    <h2><span>IPowerUp</span></h2>
-                    <div class="dropdown">
-                        <a href="../homepage/homepage.html" class="home">Home</a>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">Categories</button>
-                        <div class="dropdown-content">
-                            <a href="../patent/patent.html">Patent</a>
-                            <a href="../copyright/copyright.html">Copyright</a>
-                            <a href="../trademark/trademark.html">Trademarks</a>
-                            <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">Games</button>
-                        <div class="dropdown-content">
-                            <a href="../games/quiz_trademark/tradesecret-quiz.html">Trademark Quiz</a>
-                            <a href="../games/quiz/tradesecret-quiz.html">Tradesecret Quiz</a>
-                            <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
-                            <a href="../games/crossword/patent-crossword.html">Crossword</a>
-                            <a href="../games/wordsearch/Copyright-wordsearch.html">Wordsearch</a>
-                        </div>
-                    </div>
-                    <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
-                    <a class="btn" href="../../index.html">Sign Out</a>
-                </nav>
-            </header>
+    <header>
+    <nav class="navbar">
+      <h2><span>IPowerUp</span></h2>
+      <div class="nav-links">
+        <a href="/src/homepage/homepage.html" class="home">Home</a>
+        <div class="dropdown">
+          <a class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <a href="../patent/patent.html">Patent</a>
+            <a href="../copyright/copyright.html">Copyright</a>
+            <a href="../trademark/trademark.html">Trademarks</a>
+            <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+          </div>
         </div>
-    
-        <div class="row">
-            <div class="col col1">
-                <h1 class="ip-title">Trademark</h1>
-                <p class="ip-desc1">The term trademark refers to a recognizable insignia, phrase, word, or symbol that
-                    denotes a specific product and legally differentiates it from all other products of its kind.
-                    A trademark exclusively identifies a product as belonging to a specific company and recognizes the
-                    company's ownership of the brand.
-                    Trademarks are generally considered a form of intellectual property and may or may not be
-                    registered.
-                </p>
-                &nbsp;
-                <p class="ip-desc2">Trademarks not only help distinguish products within the legal and business systems
-                    but just as significantly with consumers.
-                    They are used to identify and protect words and design elements that identify the source, owner, or
-                    developer of a product or service.
-                    They can be corporate logos, slogans, bands, or the brand name of a product.
-                </p>
-                &nbsp;
-                <a href="../games/wordsearch/WordSearch.html?type=trademark">
-                    <button type="button">WordSearch</button>
-                  </a>
-                <a href="../games/quiz/quiz.html?type=trademark">
-                    <button type="button">Trademark Quiz</button>
-                  </a>
-                <a href="../games/logoquiz/logoGame.html">
-                    <button type="button">Logo Game</button>
-                </a>
+        <div class="dropdown">
+          <a class="dropbtn">Games</a>
+          <div class="dropdown-content">
+            <div class="dropdown-submenu">
+              <a class="subdropbtn">Quiz ▸</a>
+              <div class="submenu-content">
+                <a href="../games/quiz/quiz.html?type=trademark">Trademark Quiz</a>
+                <a href="../games/quiz/quiz.html?type=copyright">Copyright Quiz</a>
+                <a href="../games/quiz/quiz.html?type=tradesecret">Trade Secret Quiz</a>
+                <a href="../games/quiz/quiz.html?type=patent">Patent Quiz</a>
+              </div>
             </div>
-            <div class="col">
-                <div class="card"><iframe width="650" height="415"
-                        src="https://www.youtube.com/embed/J-PYuZOPrzI?si=-rB13VB3xSbhb19z" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen> </iframe> </div>
+            <div class="dropdown-submenu">
+              <a class="subdropbtn">Wordsearch ▸</a>
+              <div class="submenu-content">
+                <a href="../games/wordsearch/WordSearch.html?type=trademark">Trademark Wordsearch</a>
+                <a href="../games/wordsearch/WordSearch.html?type=copyright">Copyright Wordsearch</a>
+                <a href="../games/wordsearch/WordSearch.html?type=tradesecret">Trade Secret Wordsearch</a>
+                <a href="../games/wordsearch/WordSearch.html?type=patent">Patent Wordsearch</a>
+              </div>
             </div>
+            <div class="dropdown-submenu">
+              <a class="subdropbtn">Crossword ▸</a>
+              <div class="submenu-content">
+                <a href="../games/crossword/crossword.html?type=trademark">Trademark Crossword</a>
+                <a href="../games/crossword/crossword.html?type=copyright">Copyright Crossword</a>
+                <a href="../games/crossword/crossword.html?type=tradesecret">Trade Secret Crossword</a>
+                <a href="../games/crossword/crossword.html?type=patent">Patent Crossword</a>
+              </div>
+            </div>
+            <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+          </div>
         </div>
+      </div>
+      <div class="nav-buttons">
+        <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+        <a class="btn" href="../../index.html">Sign Out</a>
+        <a class="profile-pic" href="/src/homepage/homepage.html"><img src="/images/profile-pic.png"></a>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+  &nbsp;
+    <div class="blur">
+      <div class="col col1">
+        <h1 class="ip-title"><span>Trademark</span></h1>
+        <div class="cont">
+          <div class="sliding-facts">
+            <span class="nav-arrow" id="prev">&lt;</span>
+            <div class="facts-container">
+            <p id="facts" class="ip-desc">
+              Copyright is a legal right that grants creators exclusive rights to reproduce, use, and duplicate their
+              original work for a set period. This protection applies to works created independently and in tangible
+              form, known as Original Works of Authorship (OWA). However, copyright does not cover ideas, concepts,
+              theories, or certain items like brand names and logos. Once a copyright expires, the work enters the
+              public domain.
+            </p>
+            </div>
+            <span class="nav-arrow" id="next">&gt;</span>
+          </div>
+          <div class="game-tags">
+            <div class="game-btn"><a href="../games/wordsearch/WordSearch.html?type=trademark" class="button-container">WordSearch</a></div>
+            <div class="game-btn"><a href="../games/crossword/crossword.html?type=trademark" class="button-container">Crossword</a></div>
+            <div class="game-btn"><a href="../games/quiz/quiz.html?type=trademark" class="button-container">Quiz</a></div>
+            <div class="game-btn"><a href="/src/games/Story/trademark-story.html" class="button-container">Video</a></div>
+          </div>
+      </div>
+        <div class="card">
+          <iframe width="560" height="355" src="https://www.youtube.com/embed/J-PYuZOPrzI?si=-rB13VB3xSbhb19z"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
+  <!-- <div class="game-tags">
+    <div><a href="../games/wordsearch/WordSearch.html?type=copyright" class="button-container">WordSearch</a></div>
+    <div><a href="../games/crossword/crossword.html" class="button-container">Crossword</a></div>
+    <div><a href="../games/quiz/quiz.html" class="button-container">Quiz</a></div>
+  </div> -->
+  <script src="trademark.js"></script>
 </body>
 
 </html>

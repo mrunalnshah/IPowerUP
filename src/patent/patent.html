@@ -5,86 +5,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="patent.css" rel="stylesheet" />
-  <title>Patent</title>
+  <link href="/src/navbar/navbar-style.css" rel="stylesheet" />
+  <title>Copyright</title>
 </head>
 
 <body>
-  <div class="container">
-    <nav>
-      <a href="../homepage/homepage.html" style="text-decoration: none">
-        <h2><span>IPowerUp</span></h2>
-      </a>
-      <ul>
-        <li><a href="../homepage/homepage.html">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-
-        <li><a href="#">Categories</a></li>
-      </ul>
-      <a class="btn" href="../../index.html" style="color: aliceblue">Sign Out</a>
-    </nav>
-    <!-- <div class="navbar">
-            <img src="logo2.jpeg" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">About</a></li>
-                </ul>
-            </nav>
-             <img src="menu.png" class="menu-icon"> 
-        </div> -->
-    <div class="row">
-      <div class="col col1">
-        <h1 class="ip-title">Patent</h1>
-        <p class="ip-desc">
-          Patents are one of the oldest forms of intellectual property
-          protection. The basic aim of a patent system is to encourage
-          economic and technological development by rewarding individual
-          creativity and/or intellectual. A patent under the act is a grant
-          from the government to inventors, for a limited period of time, the
-          exclusive right to make, use, exercise, and vend the invention.
-        </p>
-        &nbsp;
-        <p class="ip-desc">
-          As per Trade Related Intellectual Property Rights (TRIPS), Article
-          33, the periods of patent is 20 years from the date of filing of the
-          application for a patent. At the end of patent period, the
-          government publishes the invention and it becomes part of the public
-          domain. In other words, after the expiry of patent period the public
-          can make use of the patent. As part of the public domain it is
-          assumed that the disclosure of patent for public will stimulate
-          ideas and perhaps even the development of an even better product
-          that could replace the original.
-        </p>
-        &nbsp;
-        <p class="ip-desc">
-          Patents as one's exclusive property rights can be sold, transferred,
-          willed, licensed, or used as collateral much like other valuable
-          assets. In fact, most independent inventors do not commercialise
-          their inventions or create new products from their ideas, instead,
-          they sell or license their patents to others who have the resources
-          to develop. To quote one such case, the Coca-Cola formula was
-          developed by a compounder. He could not commercialise it due to lack
-          of required resources. He sold it to a doctor who commercialised
-          'the Coca Cola formula'.
-        </p>
-        <a href="../games/wordsearch/WordSearch.html?type=patent">
-          <button type="button">WordSearch</button>
-        </a>
-        <a href="../games/quiz/quiz.html?type=patent">
-          <button type="button">Patent Quiz</button>
-        </a>
+    <header>
+    <nav class="navbar">
+      <h2><span>IPowerUp</span></h2>
+      <div class="nav-links">
+        <a href="/src/homepage/homepage.html" class="home">Home</a>
+        <div class="dropdown">
+          <a class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <a href="../patent/patent.html">Patent</a>
+            <a href="../copyright/copyright.html">Copyright</a>
+            <a href="../trademark/trademark.html">Trademarks</a>
+            <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropbtn">Games</a>
+          <div class="dropdown-content">
+            <div class="dropdown-submenu">
+              <a class="subdropbtn">Quiz ▸</a>
+              <div class="submenu-content">
+                <a href="../games/quiz/quiz.html?type=trademark">Trademark Quiz</a>
+                <a href="../games/quiz/quiz.html?type=copyright">Copyright Quiz</a>
+                <a href="../games/quiz/quiz.html?type=tradesecret">Trade Secret Quiz</a>
+                <a href="../games/quiz/quiz.html?type=patent">Patent Quiz</a>
+              </div>
+            </div>
+            <div class="dropdown-submenu">
+              <a class="subdropbtn">Wordsearch ▸</a>
+              <div class="submenu-content">
+                <a href="../games/wordsearch/WordSearch.html?type=trademark">Trademark Wordsearch</a>
+                <a href="../games/wordsearch/WordSearch.html?type=copyright">Copyright Wordsearch</a>
+                <a href="../games/wordsearch/WordSearch.html?type=tradesecret">Trade Secret Wordsearch</a>
+                <a href="../games/wordsearch/WordSearch.html?type=patent">Patent Wordsearch</a>
+              </div>
+            </div>
+            <div class="dropdown-submenu">
+              <a class="subdropbtn">Crossword ▸</a>
+              <div class="submenu-content">
+                <a href="../games/crossword/crossword.html?type=trademark">Trademark Crossword</a>
+                <a href="../games/crossword/crossword.html?type=copyright">Copyright Crossword</a>
+                <a href="../games/crossword/crossword.html?type=tradesecret">Trade Secret Crossword</a>
+                <a href="../games/crossword/crossword.html?type=patent">Patent Crossword</a>
+              </div>
+            </div>
+            <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+          </div>
+        </div>
       </div>
-      <div class="col">
+      <div class="nav-buttons">
+        <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+        <a class="btn" href="../../index.html">Sign Out</a>
+        <a class="profile-pic" href="/src/homepage/homepage.html"><img src="/images/profile-pic.png"></a>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+  &nbsp;
+    <div class="blur">
+      <div class="col col1">
+        <h1 class="ip-title"><span>Patent</span></h1>
+        <div class="cont">
+          <div class="sliding-facts">
+            <span class="nav-arrow" id="prev">&lt;</span>
+            <div class="facts-container">
+            <p id="facts" class="ip-desc">
+              Copyright is a legal right that grants creators exclusive rights to reproduce, use, and duplicate their
+              original work for a set period. This protection applies to works created independently and in tangible
+              form, known as Original Works of Authorship (OWA). However, copyright does not cover ideas, concepts,
+              theories, or certain items like brand names and logos. Once a copyright expires, the work enters the
+              public domain.
+            </p>
+            </div>
+            <span class="nav-arrow" id="next">&gt;</span>
+          </div>
+          <div class="game-tags">
+            <div class="game-btn"><a href="../games/wordsearch/WordSearch.html?type=patent" class="button-container">WordSearch</a></div>
+            <div class="game-btn"><a href="../games/crossword/crossword.html?type=patent" class="button-container">Crossword</a></div>
+            <div class="game-btn"><a href="../games/quiz/quiz.html?type=patent" class="button-container">Quiz</a></div>
+            <div class="game-btn"><a href="/src/games/Story/Patent-Story.html" class="button-container">Video</a></div>
+          </div>
+      </div>
         <div class="card">
-          <iframe width="500" height="315" src="https://www.youtube.com/embed/Bb9EBtlGx7w?si=geiBHqKEY5qB8X72"
+          <iframe width="560" height="355" src="https://www.youtube.com/embed/Bb9EBtlGx7w?si=geiBHqKEY5qB8X72"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
       </div>
     </div>
-  </div>
+  <!-- <div class="game-tags">
+    <div><a href="../games/wordsearch/WordSearch.html?type=copyright" class="button-container">WordSearch</a></div>
+    <div><a href="../games/crossword/crossword.html" class="button-container">Crossword</a></div>
+    <div><a href="../games/quiz/quiz.html" class="button-container">Quiz</a></div>
+  </div> -->
+  <script src="patent.js"></script>
 </body>
 
 </html>
