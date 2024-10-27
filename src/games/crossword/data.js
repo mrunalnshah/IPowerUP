@@ -55,8 +55,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         const wordSearchType = urlParams.get('type')?.toLowerCase();
 
-        console.log(wordSearchType);
-
         var randomIndex = 0
         if (wordSearchType === "trademark") {
             randomIndex = 0

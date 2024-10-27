@@ -52,6 +52,7 @@ const getUserDetails = async (email) => {
         const patentQuiz = userDoc.data().quizScorePatent || 0;
         const patentWordsearch = userDoc.data().wordsearchScorePatent || 0;
 
+        // Individual IP totals
         const trademarkTotalScore = trademarkCrossword + trademarkGuessTheLogo + trademarkQuiz + trademarkWordsearch;
         const tradesecretTotalScore = tradesecretCrossword + tradesecretQuiz + tradesecretWordsearch;
         const patentTotalScore = patentCrossword + patentQuiz + patentWordsearch;

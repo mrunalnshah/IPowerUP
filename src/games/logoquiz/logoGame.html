@@ -6,9 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logo Quiz Game</title>
     <link rel="stylesheet" href="logoGame.css" />
-</head>
+    <link rel="stylesheet" href="../../navbar/navbar-style.css" </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <h2><span>IPowerUp</span></h2>
+            <div class="nav-links">
+                <a href="/src/homepage/homepage.html" class="home">Home</a>
+                <div class="dropdown">
+                    <a class="dropbtn">Categories</a>
+                    <div class="dropdown-content">
+                        <a href="../patent/patent.html">Patent</a>
+                        <a href="../copyright/copyright.html">Copyright</a>
+                        <a href="../trademark/trademark.html">Trademarks</a>
+                        <a href="../tradesecret/tradesecret.html">Trade Secrets</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn">Games</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-submenu">
+                            <a class="subdropbtn">Quiz ▸</a>
+                            <div class="submenu-content">
+                                <a href="../games/quiz/quiz.html?type=trademark">Trademark Quiz</a>
+                                <a href="../games/quiz/quiz.html?type=copyright">Copyright Quiz</a>
+                                <a href="../games/quiz/quiz.html?type=tradesecret">Trade Secret Quiz</a>
+                                <a href="../games/quiz/quiz.html?type=patent">Patent Quiz</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <a class="subdropbtn">Wordsearch ▸</a>
+                            <div class="submenu-content">
+                                <a href="../games/wordsearch/WordSearch.html?type=trademark">Trademark Wordsearch</a>
+                                <a href="../games/wordsearch/WordSearch.html?type=copyright">Copyright Wordsearch</a>
+                                <a href="../games/wordsearch/WordSearch.html?type=tradesecret">Trade Secret
+                                    Wordsearch</a>
+                                <a href="../games/wordsearch/WordSearch.html?type=patent">Patent Wordsearch</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <a class="subdropbtn">Crossword ▸</a>
+                            <div class="submenu-content">
+                                <a href="../games/crossword/crossword.html?type=trademark">Trademark Crossword</a>
+                                <a href="../games/crossword/crossword.html?type=copyright">Copyright Crossword</a>
+                                <a href="../games/crossword/crossword.html?type=tradesecret">Trade Secret Crossword</a>
+                                <a href="../games/crossword/crossword.html?type=patent">Patent Crossword</a>
+                            </div>
+                        </div>
+                        <a href="../games/logoquiz/logoGame.html">Guess the Logo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <a class="btn1" href="../scoreboard/scoreboard.html">Leaderboard</a>
+                <a class="btn" href="../../index.html">Sign Out</a>
+                <a class="profile-pic" href="/src/profile/profile.html"><img src="/images/profile-pic.png"></a>
+            </div>
+        </nav>
+    </header>
     <section class="main">
         <div class="container">
             <div class="col" id="questionBox">
@@ -16,7 +72,7 @@
             <div class="col" id="questionBox">
             </div>
             <div class="col box">
-                <input type="radio" name="answer" id="optionA" value="a" required/>
+                <input type="radio" name="answer" id="optionA" value="a" required />
                 <img src="" alt="Option A" id="imgOptionA" />
                 <input type="radio" name="answer" id="optionB" value="b" required />
                 <img src="" alt="Option B" id="imgOptionB" />
