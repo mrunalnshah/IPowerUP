@@ -135,12 +135,13 @@ justify-content: center;  /* Center content horizontally */
 .previous a{
   text-decoration: none;
   color: white;       
+  font-size: x-large;
 }
 
 .button-container{
 position: re;
 justify-content: center;
-margin-top: 1.5%;
+margin-top: 3%;
 z-index: 2;
 }
 .previous:hover {
